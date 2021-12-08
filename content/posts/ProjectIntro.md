@@ -13,7 +13,7 @@ We will first introduce you to the dataset we have created, then we will attempt
 Finally, we get insight into the nature of collaborations between artists,
 as we find that number of partnerships strongly correlates with artists' popularity.
 
-You can watch our teaser-video: [here](https://www.kaggle.com/danield2255/data-on-songs-from-billboard-19992019), 
+You can watch our teaser video: [here!](https://www.kaggle.com/danield2255/data-on-songs-from-billboard-19992019) 
 
 ## Dataset
 
@@ -22,7 +22,7 @@ There is one wikipedia page for each year, with a title in the form “199X_in_m
 where all the albums released are being listed.  We combine it with a number of other sources, 
 like other wikipedia pages we used to retrieve more detailed information on artists and each of the albums, 
 which let us map the collaboration between artists. We use publicly available dataset such as 
-[Billboard dataset from Kaggle](https://www.kaggle.com/danield2255/data-on-songs-from-billboard-19992019), 
+[Billboard dataset from Kaggle](https://www.youtube.com/watch?v=OMDIm40BQ8s), 
 APIs by Spotify or Genius to get insight into popularity, sound and lyric features.
 From Spotify we retrieved song features such as danceability and energy.
 From Billboard we retrieved data on which albums made it into the top charts and for how long.
@@ -41,7 +41,18 @@ This means that the kinds of interactions that our network models are the follow
 - inspirations and covers
 - former bands of the album authors.
 
-Following this procedure we obtained a network which has 2763 nodes and 15108 edges. 
+Following this procedure we obtained a network which has 2763 nodes and 15108 edges.  
+Each node in the network has the following attributes:
+
+* Spotify album features (danceability, energy, loudness, mode, speechiness, acousticness, instrumentalness, liveness, valence, tempo): The average value of every attribute is found for each album.
+* Genres: All the genres associated with an artist.
+* peak_rank: The highest rank an artist has achieved on the Billboard charts.
+* weeks_on_chart: The accumulation of weeks on chart for all the artists' albums.
+* last_week: The last week one of the artists' albums was on the charts.
+* in_degree: The total number of in-references to the artist.
+* out_degree: The total number of out-references the artist has.
+* partition_id: The community the artist is placed in using the louvain algorithm [REFERENCE TODO].
+
 A visualisation of the network can be seen below.`
 
 ![alt text for screen readers](/network_vis.png "Network visualisation").
@@ -67,10 +78,41 @@ The network's statistics are following:
 | Pairs of artists that collaborated the most | Radiohead - Nigel Godrich (30 times), Opeth - Bloodbath (30), Radiohead - John Leckie (29) |
 
 The in and out-degrees distributions are following:
-![alt text for screen readers](/network_vis.png "Network visualisation").
-![alt text for screen readers](/out_degree.png "Network visualisation").
 
-Both these distributions follow the Power Law
+![alt text for screen readers](/network_vis.png "Network visualisation")
+
+![alt text for screen readers](/out_degree.png "Network visualisation")
+
+The linear and log-log in-degree distribution are shown in the figures above.
+Both these distributions follow the Power Law. We notice that there are many nodes with only a few links
+(high frequency) and a few hubs (high degree) with large number of links.
+The linear dependence in the log-log plot supports the idea that indeed, the graph follows the power distribution.
+
+For this project, we have chosen to use an albums number of weeks on chart as a metric for success.
+We want to examine the attributes of our nodes, to see if there is any correlation between these attributes and
+the success of an artist. For this, we made a scatter plot of each node attributes against the weeks on chart and
+computed the pearson correlation between these. See the scatter plot below.
+
+![alt text for screen readers](/scatter1.png)
+
+![alt text for screen readers](/scatter2.png)
+
+From this, we found that there was a strong correlation between the number of weeks an artist had on the Billboard
+charts and their number of collaborations.  This is interesting, as it points to the idea that the more popular you are
+(i.e. the more weeks you have on the charts), the more collaborations you have! This is an interesting finding,
+one that we would like to explore further. To do this we will look to determine what factors make two or more artists
+collaborate together (see part TODO). This will give us more insight on what it takes to have many collaborations,
+and thus have more success. 
+
+
+
+Before we get to that though, we first want to examine if there are other factors that are relevant to the success
+of an artist, besides collaborations. For this we will dive into the lyrics of our artists, performing sentiment
+analysis on them, to see if there is something we can learn from this. Is there a correlation between sentiment of 
+an artists' albums and their success? Does the genre of their music have an influence? Are there other factors that 
+are important?
+
+## Sentiment analysis
 
 ### Lalala
 Hasta manana

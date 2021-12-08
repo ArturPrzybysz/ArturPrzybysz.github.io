@@ -39,7 +39,7 @@ We will first introduce you to the dataset we have created, then we will attempt
 We will first introduce you to the dataset we have created, then we will attempt to predict an artists&rsquo; success directly. Finally, we get insight into the nature of collaborations between artists, as we find that number of partnerships strongly correlates with artists&rsquo; popularity.">
 <meta itemprop="datePublished" content="2021-12-08T15:04:05&#43;01:00" />
 <meta itemprop="dateModified" content="2021-12-08T15:04:05&#43;01:00" />
-<meta itemprop="wordCount" content="576">
+<meta itemprop="wordCount" content="1006">
 
 
 
@@ -125,14 +125,14 @@ their artistic creations and popularity of their work.</p>
 <p>We will first introduce you to the dataset we have created, then we will attempt to predict an artists&rsquo; success directly.
 Finally, we get insight into the nature of collaborations between artists,
 as we find that number of partnerships strongly correlates with artists&rsquo; popularity.</p>
-<p>You can watch our teaser-video: <a href="https://www.kaggle.com/danield2255/data-on-songs-from-billboard-19992019">here</a>,</p>
+<p>You can watch our teaser video: <a href="https://www.kaggle.com/danield2255/data-on-songs-from-billboard-19992019">here!</a></p>
 <h2 id="dataset">Dataset</h2>
 <p>The core part of our dataset comes from wikipedia pages listing all the albums released from 1990-1999.
 There is one wikipedia page for each year, with a title in the form “199X_in_music”,
 where all the albums released are being listed.  We combine it with a number of other sources,
 like other wikipedia pages we used to retrieve more detailed information on artists and each of the albums,
 which let us map the collaboration between artists. We use publicly available dataset such as
-<a href="https://www.kaggle.com/danield2255/data-on-songs-from-billboard-19992019">Billboard dataset from Kaggle</a>,
+<a href="https://www.youtube.com/watch?v=OMDIm40BQ8s">Billboard dataset from Kaggle</a>,
 APIs by Spotify or Genius to get insight into popularity, sound and lyric features.
 From Spotify we retrieved song features such as danceability and energy.
 From Billboard we retrieved data on which albums made it into the top charts and for how long.
@@ -149,8 +149,19 @@ This means that the kinds of interactions that our network models are the follow
 <li>inspirations and covers</li>
 <li>former bands of the album authors.</li>
 </ul>
-<p>Following this procedure we obtained a network which has 2763 nodes and 15108 edges.
-A visualisation of the network can be seen below.`</p>
+<p>Following this procedure we obtained a network which has 2763 nodes and 15108 edges.<br>
+Each node in the network has the following attributes:</p>
+<ul>
+<li>Spotify album features (danceability, energy, loudness, mode, speechiness, acousticness, instrumentalness, liveness, valence, tempo): The average value of every attribute is found for each album.</li>
+<li>Genres: All the genres associated with an artist.</li>
+<li>peak_rank: The highest rank an artist has achieved on the Billboard charts.</li>
+<li>weeks_on_chart: The accumulation of weeks on chart for all the artists&rsquo; albums.</li>
+<li>last_week: The last week one of the artists&rsquo; albums was on the charts.</li>
+<li>in_degree: The total number of in-references to the artist.</li>
+<li>out_degree: The total number of out-references the artist has.</li>
+<li>partition_id: The community the artist is placed in using the louvain algorithm [REFERENCE TODO].</li>
+</ul>
+<p>A visualisation of the network can be seen below.`</p>
 <p><img src="/network_vis.png" alt="alt text for screen readers" title="Network visualisation">.</p>
 <p>For visualisation clarity, we decided to only display the names of the nodes
 with at least 50 collaborations. This highlights the artists with the most collaborations.
@@ -198,10 +209,31 @@ of rappers, where we can see N.A.S., Snoop Dogg and The Notorious Bigg.</p>
 </tr>
 </tbody>
 </table>
-<p>The in and out-degrees distributions are following:
-<img src="/network_vis.png" alt="alt text for screen readers" title="Network visualisation">.
-<img src="/out_degree.png" alt="alt text for screen readers" title="Network visualisation">.</p>
-<p>Both these distributions follow the Power Law</p>
+<p>The in and out-degrees distributions are following:</p>
+<p><img src="/network_vis.png" alt="alt text for screen readers" title="Network visualisation"></p>
+<p><img src="/out_degree.png" alt="alt text for screen readers" title="Network visualisation"></p>
+<p>The linear and log-log in-degree distribution are shown in the figures above.
+Both these distributions follow the Power Law. We notice that there are many nodes with only a few links
+(high frequency) and a few hubs (high degree) with large number of links.
+The linear dependence in the log-log plot supports the idea that indeed, the graph follows the power distribution.</p>
+<p>For this project, we have chosen to use an albums number of weeks on chart as a metric for success.
+We want to examine the attributes of our nodes, to see if there is any correlation between these attributes and
+the success of an artist. For this, we made a scatter plot of each node attributes against the weeks on chart and
+computed the pearson correlation between these. See the scatter plot below.</p>
+<p><img src="/scatter1.png" alt="alt text for screen readers"></p>
+<p><img src="/scatter2.png" alt="alt text for screen readers"></p>
+<p>From this, we found that there was a strong correlation between the number of weeks an artist had on the Billboard
+charts and their number of collaborations.  This is interesting, as it points to the idea that the more popular you are
+(i.e. the more weeks you have on the charts), the more collaborations you have! This is an interesting finding,
+one that we would like to explore further. To do this we will look to determine what factors make two or more artists
+collaborate together (see part TODO). This will give us more insight on what it takes to have many collaborations,
+and thus have more success.</p>
+<p>Before we get to that though, we first want to examine if there are other factors that are relevant to the success
+of an artist, besides collaborations. For this we will dive into the lyrics of our artists, performing sentiment
+analysis on them, to see if there is something we can learn from this. Is there a correlation between sentiment of
+an artists&rsquo; albums and their success? Does the genre of their music have an influence? Are there other factors that
+are important?</p>
+<h2 id="sentiment-analysis">Sentiment analysis</h2>
 <h3 id="lalala">Lalala</h3>
 <p>Hasta manana</p>
 <ul class="pa0">
