@@ -17,8 +17,8 @@ You can watch our teaser video: [here!](https://www.kaggle.com/danield2255/data-
 
 ## Dataset
 
-The core part of our dataset comes from wikipedia pages listing all the albums released from 1990-1999. 
-There is one wikipedia page for each year, with a title in the form “199X_in_music”, 
+The core part of our dataset comes from Wikipedia pages listing all the albums released from 1990-1999. 
+There is one Wikipedia page for each year, with a title in the form “199X_in_music”, 
 where all the albums released are being listed.  We combine it with a number of other sources, 
 like other wikipedia pages we used to retrieve more detailed information on artists and each of the albums, 
 which let us map the collaboration between artists. We use publicly available dataset such as 
@@ -108,7 +108,7 @@ and thus have more success.
 
 Before we get to that though, we first want to explore our data further, to see if we find anything interesting.
 We want to examine if there are other factors that are relevant to the success
-of an artist, besides collaborations. For this we will dive into the lyrics of our artists, calculating TFIDF scores,
+of an artist, besides collaborations. For this we will dive into the lyrics of our artists, calculating TF-IDF scores,
 making word clouds and performing sentiment
 analysis on them, to see if there is something we can learn from this. Is there a correlation between sentiment of 
 an artists' albums and their success? Does the genre of their music have an influence? Are there other factors that 
@@ -128,9 +128,39 @@ can be seen below.
 <img alt="alt text for screen readers" height="500" src="/wordcloud3.png" width="500"/>
 
 
-To give an even better understanding, in the title of each word cloud, we have added the 3 artists in that community
-that have the most connections. These artists are meant to represent the communities in a way. We see that in the
-word cloud where 
+To give an even better understanding, in the title of each word cloud, we have added the top 3 artists in that community
+(the artists that have the most connections). These artists are meant to represent the communities in a way.
+We see that in the word cloud where the top artists are Nas, The Notorious B.I.G. and a Tribe Called Quest, the biggest
+words are typical rap lyrics that were found a lot in 90's rap music [INSERT REF TODO].
+On the other side, the word cloud with the top artist's Weird Al Yankovic, The Red Hot Chili Peppers and The Foo Fighters
+have words more in the genre of rock. The last word cloud, with the top artist's Paul McCartney, John Lennon
+and Ringo Starr has more hippy lyrics, which probably doesn't surprise anyone, with its top artist's being 
+members of the Beatles :-)
+
+The purpose of the sentiment analysis part is to analyze the lyrics of different artists and albums in order
+to determine if the sentiment score for each album in the network is influenced by specific features such as 
+genre, year, trend in the number of collaborations etc. Ultimately, the analysis of this part investigates the 
+interplay between the LabMT sentiment score and features such as number of collaborations or weeks in chart. 
+In order to do so, we broke down our analysis into 3 levels: exploratory sentiment analysis of all the artists in 
+the network, analysis of communities of artists and associated genres and analysis of the most successful artists.
+
+<img alt="alt text for screen readers" height="500" src="/labmt_1.png" width="500"/>
+
+For the purpose of this analysis, we found that LabMT is the most robust method to analyze our lyrics. From the 
+histogram above, we notice that the values of sentiment score for LabMT method lie between 4.9 and 5.095. 
+The histogram follows a Gaussian distribution, with most values centered around 5, but with the entire distribution 
+being slightly skewed to the left. 
+
+<img alt="alt text for screen readers" height="500" src="labmt_genres_top.png" width="500"/>
+
+We found our that the analysis of the sentiment score per genre to be quite interesting, which is why we filtered 
+our network for the top 30 most artists by sentiment score (artists represent the nodes in our network) and we 
+extracted their associated genres. In the figure, we notice that some genres, such as girl group, ambient house and 
+have a higher sentiment score than the others, such as hip-hop and punk. Considering that girl groups have met a 
+wide success in the 90's, with famous bands such as Destiny's Child and Spicy Girls, it is no surprise that the 
+genre is associated with very happy sentiments.
+
+## Conclusion
 
 
 
