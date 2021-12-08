@@ -106,11 +106,33 @@ and thus have more success.
 
 
 
-Before we get to that though, we first want to examine if there are other factors that are relevant to the success
-of an artist, besides collaborations. For this we will dive into the lyrics of our artists, performing sentiment
+Before we get to that though, we first want to explore our data further, to see if we find anything interesting.
+We want to examine if there are other factors that are relevant to the success
+of an artist, besides collaborations. For this we will dive into the lyrics of our artists, calculating TFIDF scores,
+making word clouds and performing sentiment
 analysis on them, to see if there is something we can learn from this. Is there a correlation between sentiment of 
 an artists' albums and their success? Does the genre of their music have an influence? Are there other factors that 
 are important?
+
+## Word Clouds
+
+As mentioned earlier, we have used the Louvain algorithm [REF TODO] to partition the artists (our nodes) into
+communities. We have 16 communities. In order to understand these communities better, i.e. what they represent,
+we can look at what is important to them. For this, we will be using the lyrics from each artists' albums.
+For each community, a select number of song lyrics of the artist's in that community are analyzed using the TFIDF
+score [REF TODO]. We have then used this to make word clouds of the communities lyrics. A select number of these
+can be seen below.
+
+<img alt="alt text for screen readers" height="500" src="/wordcloud1.png" width="500"/>
+<img alt="alt text for screen readers" height="500" src="/wordcloud2.png" width="500"/>
+<img alt="alt text for screen readers" height="500" src="/wordcloud3.png" width="500"/>
+
+
+To give an even better understanding, in the title of each word cloud, we have added the 3 artists in that community
+that have the most connections. These artists are meant to represent the communities in a way. We see that in the
+word cloud where 
+
+
 
 ## Sentiment analysis
 

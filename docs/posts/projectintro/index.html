@@ -39,7 +39,7 @@ We will first introduce you to the dataset we have created, then we will attempt
 We will first introduce you to the dataset we have created, then we will attempt to predict an artists&rsquo; success directly. Finally, we get insight into the nature of collaborations between artists, as we find that number of partnerships strongly correlates with artists&rsquo; popularity.">
 <meta itemprop="datePublished" content="2021-12-08T15:04:05&#43;01:00" />
 <meta itemprop="dateModified" content="2021-12-08T15:04:05&#43;01:00" />
-<meta itemprop="wordCount" content="1006">
+<meta itemprop="wordCount" content="1175">
 
 
 
@@ -228,11 +228,24 @@ charts and their number of collaborations.  This is interesting, as it points to
 one that we would like to explore further. To do this we will look to determine what factors make two or more artists
 collaborate together (see part TODO). This will give us more insight on what it takes to have many collaborations,
 and thus have more success.</p>
-<p>Before we get to that though, we first want to examine if there are other factors that are relevant to the success
-of an artist, besides collaborations. For this we will dive into the lyrics of our artists, performing sentiment
+<p>Before we get to that though, we first want to explore our data further, to see if we find anything interesting.
+We want to examine if there are other factors that are relevant to the success
+of an artist, besides collaborations. For this we will dive into the lyrics of our artists, calculating TFIDF scores,
+making word clouds and performing sentiment
 analysis on them, to see if there is something we can learn from this. Is there a correlation between sentiment of
 an artists&rsquo; albums and their success? Does the genre of their music have an influence? Are there other factors that
 are important?</p>
+<h2 id="word-clouds">Word Clouds</h2>
+<p>As mentioned earlier, we have used the Louvain algorithm [REF TODO] to partition the artists (our nodes) into
+communities. We have 16 communities. In order to understand these communities better, i.e. what they represent,
+we can look at what is important to them. For this, we will be using the lyrics from each artists&rsquo; albums.
+For each community, a select number of song lyrics of the artist&rsquo;s in that community are analyzed using the TFIDF
+score [REF TODO]. We have then used this to make word clouds of the communities lyrics. A select number of these
+can be seen below.</p>
+<!-- raw HTML omitted -->
+<p>To give an even better understanding, in the title of each word cloud, we have added the 3 artists in that community
+that have the most connections. These artists are meant to represent the communities in a way. We see that in the
+word cloud where</p>
 <h2 id="sentiment-analysis">Sentiment analysis</h2>
 <h3 id="lalala">Lalala</h3>
 <p>Hasta manana</p>
