@@ -43,7 +43,7 @@ This means that the kinds of interactions that our network models are the follow
 Following this procedure we obtained a network which has 2763 nodes and 15108 edges. 
 A visualisation of the network can be seen below.`
 
-<img src="/network_vis.png" alt="drawing" width="300"/>
+![alt text for screen readers](/network_vis.png "Network visualisation").
 
 For visualisation clarity, we decided to only display the names of the nodes
 with at least 50 collaborations. This highlights the artists with the most collaborations.
@@ -65,10 +65,9 @@ The network's statistics are following:
 |     Top connected artists (out-degree)      |                             Alanis Morissette with 108 albums                              |
 | Pairs of artists that collaborated the most | Radiohead - Nigel Godrich (30 times), Opeth - Bloodbath (30), Radiohead - John Leckie (29) |
 
-
-The in and out-degrees are following:
-<img src="/in_degree.png" alt="drawing" width="300"/>
-<img src="/out_degree.png" alt="drawing" width="300"/>
+The in and out-degrees distributions are following:
+![alt text for screen readers](/network_vis.png "Network visualisation").
+![alt text for screen readers](/out_degree.png "Network visualisation").
 
 
 
