@@ -1,41 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
+    <title></title>
     <link>https://arturprzybysz.github.io/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Dec 2021 11:13:54 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 08 Dec 2021 15:04:05 +0100</lastBuildDate>
     
 	<atom:link href="https://arturprzybysz.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Data processing and such</title>
-      <link>https://arturprzybysz.github.io/posts/data/</link>
-      <pubDate>Tue, 07 Dec 2021 11:13:54 +0100</pubDate>
+      <title>Project Introduction</title>
+      <link>https://arturprzybysz.github.io/posts/projectintro/</link>
+      <pubDate>Wed, 08 Dec 2021 15:04:05 +0100</pubDate>
       
-      <guid>https://arturprzybysz.github.io/posts/data/</guid>
-      <description>This is where we describe our data sources Pretty cool, huh?</description>
-    </item>
-    
-    <item>
-      <title>More cool stuff</title>
-      <link>https://arturprzybysz.github.io/posts/coolstuff/</link>
-      <pubDate>Tue, 07 Dec 2021 11:13:54 +0100</pubDate>
-      
-      <guid>https://arturprzybysz.github.io/posts/coolstuff/</guid>
-      <description>This is where we describe the rest of our cool stuff Pretty cool, huh?</description>
-    </item>
-    
-    <item>
-      <title>Project introduction</title>
-      <link>https://arturprzybysz.github.io/posts/introduction/</link>
-      <pubDate>Tue, 07 Dec 2021 11:13:54 +0100</pubDate>
-      
-      <guid>https://arturprzybysz.github.io/posts/introduction/</guid>
-      <description>This is where we tell why we did the project we did Pretty cool, huh?</description>
+      <guid>https://arturprzybysz.github.io/posts/projectintro/</guid>
+      <description>Project introduction Work work work</description>
     </item>
     
   </channel>

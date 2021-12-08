@@ -1,5 +1,5 @@
 baseURL = "https://arturprzybysz.github.io/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+tightle = "Social Graphs Project"
+publishDir = "docs"
 theme = "ananke"
-publishDir= "docs"
