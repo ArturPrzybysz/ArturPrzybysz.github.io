@@ -45,6 +45,25 @@ A visualisation of the network can be seen below.`
 
 ![alt text for screen readers](/network_vis.png "Text to show on mouseover").
 
+For visualisation clarity, we decided to only display the names of the nodes
+with at least 50 collaborations. This highlights the artists with the most collaborations.
+The positions of the nodes have been calculated using the ForceAtlas2 algorithm [REFERENCE TODO].
+We can see that the artists have been positioned in such a way, that they are close
+to artists, that they collaborate with the most. This results in emerging of clusters.
+We hypothesise, that it is highly influenced by artists' genre. A very good example of this is a group
+of rappers, where we can see N.A.S., Snoop Dogg and The Notorious Bigg.
+
+The network's statistics are following:
+
+| **Network statistic**                       | **Statistics' value**                                                                      |
+|---------------------------------------------|--------------------------------------------------------------------------------------------|
+| average in-degree                           | 4.4                                                                                        |
+| average out-degree                          | 4.4                                                                                        |
+| Average degree (in and out)                 | 8.8                                                                                        |
+| Nodes with highest degree of centrality     | Led Zeppelin, Mariah carey, Celine Dion                                                    |
+| Top connected artists (in-degree)           | The Beatles with 82 references                                                             |
+| Top connected artists (out-degree)          | Alanis Morissette with 108 albums                                                          |
+| Pairs of artists that collaborated the most | Radiohead - Nigel Godrich (30 times), Opeth - Bloodbath (30), Radiohead - John Leckie (29) |
 
 
 ### Lalala
