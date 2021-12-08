@@ -143,7 +143,7 @@ members of the Beatles :-)
 The purpose of the sentiment analysis part is to analyze the lyrics of different artists and albums in order
 to determine if the sentiment score for each album in the network is influenced by specific features such as 
 genre, year, trend in the number of collaborations etc. Ultimately, the analysis of this part investigates the 
-interplay between the LabMT sentiment score and features such as number of collaborations or weeks in chart. 
+interplay between the LabMT sentiment score [REF TODO] and features such as number of collaborations or weeks in chart. 
 In order to do so, we broke down our analysis into 3 levels: exploratory sentiment analysis of all the artists in 
 the network, analysis of communities of artists and associated genres and analysis of the most successful artists.
 
@@ -153,18 +153,18 @@ the network, analysis of communities of artists and associated genres and analys
 For the purpose of this analysis, we found that LabMT is the most robust method to analyze our lyrics. From the 
 histogram above, we notice that the values of sentiment score for LabMT method lie between 4.9 and 5.095. 
 The histogram follows a Gaussian distribution, with most values centered around 5, but with the entire distribution 
-being slightly skewed to the left. 
+being slightly right-skewed. 
 
-![alt text for screen readers](/labmt_genres_top.png "Network visualisation")
+![alt text for screen readers](/labmt_genre_updated.png "Network visualisation")
 
 <img alt="alt text for screen readers" height="500" src="labmt_genres_top.png" width="500"/>
 
-We found our that the analysis of the sentiment score per genre to be quite interesting, which is why we filtered 
+We found out that the analysis of the sentiment score per genre to be quite interesting, which is why we filtered 
 our network for the top 30 most artists by sentiment score (artists represent the nodes in our network) and we 
-extracted their associated genres. In the figure, we notice that some genres, such as girl group, ambient house and 
-have a higher sentiment score than the others, such as hip-hop and punk. Considering that girl groups have met a 
-wide success in the 90's, with famous bands such as Destiny's Child and Spicy Girls, it is no surprise that the 
-genre is associated with very happy sentiments.
+extracted their associated genres. In the figure, we notice that some genres, such as ambient house and indie 
+have a higher sentiment score than the others, such as punk and alternative dance. Considering that house and indie have
+met a wide success in the 90's, with famous artists such as Oasis, it is no surprise that the genre is associated 
+with "happier" sentiments.
 ![alt text for screen readers](/staacked_1.png "Network visualisation")
 
 <img alt="alt text for screen readers" height="500" src="staacked_1.png" width="500"/>
@@ -210,6 +210,8 @@ number of collaborations may be statistically significant.  However, we expect t
 role in the prediction of an artists' collaborations or number of weeks on chart. In order to investigate what 
 factors influence the number of collaborations, we decided to run a number of regression models in the following 
 section.
+
+
 ## Conclusion
 
 
