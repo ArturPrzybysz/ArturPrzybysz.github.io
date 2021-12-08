@@ -5,7 +5,6 @@ draft: False
 ---
 
 ## Project introduction
-
 In this project we are looking for an answer to the question: "What makes artists successful?". 
 In order to find the answer we collect a wide range of data regarding artists' interactions, 
 their artistic creations and popularity of their work.
@@ -13,6 +12,8 @@ their artistic creations and popularity of their work.
 We will first introduce you to the dataset we have created, then we will attempt to predict an artists' success directly. 
 Finally, we get insight into the nature of collaborations between artists,
 as we find that number of partnerships strongly correlates with artists' popularity.
+
+You can watch our teaser-video: [here](https://www.kaggle.com/danield2255/data-on-songs-from-billboard-19992019), 
 
 ## Dataset
 
