@@ -137,6 +137,9 @@ have words more in the genre of rock. The last word cloud, with the top artist's
 and Ringo Starr has more hippy lyrics, which probably doesn't surprise anyone, with its top artist's being 
 members of the Beatles :-)
 
+
+## Sentiment analysis
+
 The purpose of the sentiment analysis part is to analyze the lyrics of different artists and albums in order
 to determine if the sentiment score for each album in the network is influenced by specific features such as 
 genre, year, trend in the number of collaborations etc. Ultimately, the analysis of this part investigates the 
@@ -169,6 +172,83 @@ dataframe is sorted by the average sentiment, from left to right on the x-axis, 
 a higher sentiment score may be correlated with a larger number of collaborations and weeks in chart and that it may 
 be genre-specific. We will analyze the relationship between sentiment, number of collaborations and weeks on the 
 Billboard chart further.
+
+
+Command 'gitst' not found, did you mean:
+
+  command 'gist' from deb yorick (2.2.04+dfsg1-10)
+  command 'gtst' from deb scotch (6.0.9-1)
+  command 'gitit' from deb gitit (0.12.3.1+dfsg-1build4)
+  command 'gitso' from deb gitso (0.6.2+svn158+dfsg-3)
+  command 'gmtst' from deb scotch (6.0.9-1)
+  command 'gotst' from deb scotch (6.0.9-1)
+
+Try: sudo apt install <deb name>
+
+(base) artur@artur:~/Projects/ArturPrzybysz.github.io$ git st
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   content/posts/ProjectIntro.md
+        new file:   docs/comm_stacked.png
+        new file:   docs/communities_genre.png
+        new file:   docs/happiest_saddest.png
+        new file:   docs/kde_plot.png
+        new file:   docs/labmt_1.png
+        new file:   docs/labmt_genres_top.png
+        modified:   docs/posts/projectintro/index.html
+        new file:   docs/sa.zip
+        new file:   docs/staacked_1.png
+        new file:   docs/top30_lencollabs.png
+        new file:   docs/top30_weeks.png
+        new file:   static/comm_stacked.png
+        new file:   static/communities_genre.png
+        new file:   static/happiest_saddest.png
+        new file:   static/kde_plot.png
+        new file:   static/labmt_1.png
+        new file:   static/labmt_genres_top.png
+        new file:   static/sa.zip
+        new file:   static/staacked_1.png
+        new file:   static/top30_lencollabs.png
+        new file:   static/top30_weeks.png
+
+(base) artur@artur:~/Projects/ArturPrzybysz.github.io$ git add -A
+(base) artur@artur:~/Projects/ArturPrzybysz.github.io$ git cm "wip"
+[master f231cb7] wip
+ 22 files changed, 67 insertions(+), 13 deletions(-)
+ create mode 100644 docs/comm_stacked.png
+ create mode 100644 docs/communities_genre.png
+ create mode 100644 docs/happiest_saddest.png
+ create mode 100644 docs/kde_plot.png
+ create mode 100644 docs/labmt_1.png
+ create mode 100644 docs/labmt_genres_top.png
+ create mode 100644 docs/sa.zip
+ create mode 100644 docs/staacked_1.png
+ create mode 100644 docs/top30_lencollabs.png
+ create mode 100644 docs/top30_weeks.png
+ create mode 100644 static/comm_stacked.png
+ create mode 100644 static/communities_genre.png
+ create mode 100644 static/happiest_saddest.png
+ create mode 100644 static/kde_plot.png
+ create mode 100644 static/labmt_1.png
+ create mode 100644 static/labmt_genres_top.png
+ create mode 100644 static/sa.zip
+ create mode 100644 static/staacked_1.png
+ create mode 100644 static/top30_lencollabs.png
+ create mode 100644 static/top30_weeks.png
+(base) artur@artur:~/Projects/ArturPrzybysz.github.io$ git push origin master
+fatal: unable to access 'https://github.com/ArturPrzybysz/ArturPrzybysz.github.io/': Could not resolve host: github.com
+(base) artur@artur:~/Projects/ArturPrzybysz.github.io$ git add -A
+(base) artur@artur:~/Projects/ArturPrzybysz.github.io$ git cm "wip"
+[master eee6282] wip
+ 1 file changed, 43 insertions(+), 1 deletion(-)
+(base) artur@artur:~/Projects/ArturPrzybysz.github.io$ git push origin master
+Enumerating objects: 34, done.
+Counting objects: 100% (34/34), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (20/20), done.
 
 <img alt="alt text for screen readers" height="500" src="comm_stacked.png" width="500"/>
     
@@ -206,7 +286,6 @@ section.
 
 
 
-## Sentiment analysis
 
 ### Lalala
 Hasta manana
