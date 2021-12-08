@@ -147,12 +147,15 @@ interplay between the LabMT sentiment score and features such as number of colla
 In order to do so, we broke down our analysis into 3 levels: exploratory sentiment analysis of all the artists in 
 the network, analysis of communities of artists and associated genres and analysis of the most successful artists.
 
+![alt text for screen readers](/labmt_1.png "Network visualisation")
 <img alt="alt text for screen readers" height="500" src="/labmt_1.png" width="500"/>
 
 For the purpose of this analysis, we found that LabMT is the most robust method to analyze our lyrics. From the 
 histogram above, we notice that the values of sentiment score for LabMT method lie between 4.9 and 5.095. 
 The histogram follows a Gaussian distribution, with most values centered around 5, but with the entire distribution 
 being slightly skewed to the left. 
+
+![alt text for screen readers](/labmt_genres_top.png "Network visualisation")
 
 <img alt="alt text for screen readers" height="500" src="labmt_genres_top.png" width="500"/>
 
@@ -162,8 +165,9 @@ extracted their associated genres. In the figure, we notice that some genres, su
 have a higher sentiment score than the others, such as hip-hop and punk. Considering that girl groups have met a 
 wide success in the 90's, with famous bands such as Destiny's Child and Spicy Girls, it is no surprise that the 
 genre is associated with very happy sentiments.
+![alt text for screen readers](/staacked_1.png "Network visualisation")
 
-<img alt="alt text for screen readers" height="500" src="staacked_1 .png" width="500"/>
+<img alt="alt text for screen readers" height="500" src="staacked_1.png" width="500"/>
 
 We continued our analysis with an overview of the LabMT score, number of on the Billboard chart and number of 
 collaborations, aggregated per year. We notice that specific genres such as hip-hop, rap and acoustic rock are more 
@@ -173,83 +177,7 @@ a higher sentiment score may be correlated with a larger number of collaboration
 be genre-specific. We will analyze the relationship between sentiment, number of collaborations and weeks on the 
 Billboard chart further.
 
-
-Command 'gitst' not found, did you mean:
-
-  command 'gist' from deb yorick (2.2.04+dfsg1-10)
-  command 'gtst' from deb scotch (6.0.9-1)
-  command 'gitit' from deb gitit (0.12.3.1+dfsg-1build4)
-  command 'gitso' from deb gitso (0.6.2+svn158+dfsg-3)
-  command 'gmtst' from deb scotch (6.0.9-1)
-  command 'gotst' from deb scotch (6.0.9-1)
-
-Try: sudo apt install <deb name>
-
-(base) artur@artur:~/Projects/ArturPrzybysz.github.io$ git st
-On branch master
-Your branch is up to date with 'origin/master'.
-
-Changes to be committed:
-  (use "git restore --staged <file>..." to unstage)
-        modified:   content/posts/ProjectIntro.md
-        new file:   docs/comm_stacked.png
-        new file:   docs/communities_genre.png
-        new file:   docs/happiest_saddest.png
-        new file:   docs/kde_plot.png
-        new file:   docs/labmt_1.png
-        new file:   docs/labmt_genres_top.png
-        modified:   docs/posts/projectintro/index.html
-        new file:   docs/sa.zip
-        new file:   docs/staacked_1.png
-        new file:   docs/top30_lencollabs.png
-        new file:   docs/top30_weeks.png
-        new file:   static/comm_stacked.png
-        new file:   static/communities_genre.png
-        new file:   static/happiest_saddest.png
-        new file:   static/kde_plot.png
-        new file:   static/labmt_1.png
-        new file:   static/labmt_genres_top.png
-        new file:   static/sa.zip
-        new file:   static/staacked_1.png
-        new file:   static/top30_lencollabs.png
-        new file:   static/top30_weeks.png
-
-(base) artur@artur:~/Projects/ArturPrzybysz.github.io$ git add -A
-(base) artur@artur:~/Projects/ArturPrzybysz.github.io$ git cm "wip"
-[master f231cb7] wip
- 22 files changed, 67 insertions(+), 13 deletions(-)
- create mode 100644 docs/comm_stacked.png
- create mode 100644 docs/communities_genre.png
- create mode 100644 docs/happiest_saddest.png
- create mode 100644 docs/kde_plot.png
- create mode 100644 docs/labmt_1.png
- create mode 100644 docs/labmt_genres_top.png
- create mode 100644 docs/sa.zip
- create mode 100644 docs/staacked_1.png
- create mode 100644 docs/top30_lencollabs.png
- create mode 100644 docs/top30_weeks.png
- create mode 100644 static/comm_stacked.png
- create mode 100644 static/communities_genre.png
- create mode 100644 static/happiest_saddest.png
- create mode 100644 static/kde_plot.png
- create mode 100644 static/labmt_1.png
- create mode 100644 static/labmt_genres_top.png
- create mode 100644 static/sa.zip
- create mode 100644 static/staacked_1.png
- create mode 100644 static/top30_lencollabs.png
- create mode 100644 static/top30_weeks.png
-(base) artur@artur:~/Projects/ArturPrzybysz.github.io$ git push origin master
-fatal: unable to access 'https://github.com/ArturPrzybysz/ArturPrzybysz.github.io/': Could not resolve host: github.com
-(base) artur@artur:~/Projects/ArturPrzybysz.github.io$ git add -A
-(base) artur@artur:~/Projects/ArturPrzybysz.github.io$ git cm "wip"
-[master eee6282] wip
- 1 file changed, 43 insertions(+), 1 deletion(-)
-(base) artur@artur:~/Projects/ArturPrzybysz.github.io$ git push origin master
-Enumerating objects: 34, done.
-Counting objects: 100% (34/34), done.
-Delta compression using up to 8 threads
-Compressing objects: 100% (20/20), done.
-
+![alt text for screen readers](/comm_stacked.png "Network visualisation")
 <img alt="alt text for screen readers" height="500" src="comm_stacked.png" width="500"/>
     
 Next, we examined the relationship between average sentiment per community and the number of collaborations, 
@@ -258,7 +186,7 @@ genres (the leftmost ones) have a slightly higher number of collaborations compa
 However, it may be difficult to make such a statement by looking only at the communities of genres. That is why we 
 will continue our analysis by trying to determine whether the number of collaborations and the number of weeks on 
 chart are indeed measures of success for popular artists.
-
+![alt text for screen readers](/top30_lencollabs.png "Network visualisation")
 <img alt="alt text for screen readers" height="500" src="top30_lencollabs.png" width="500"/>
 
 The plot in above presents a distribution of the number of weeks in the Billboard chart by top 30 most connected 
