@@ -161,49 +161,39 @@ being slightly right-skewed.
 
 We found out that the analysis of the sentiment score per genre to be quite interesting, which is why we filtered 
 our network for the top 30 most artists by sentiment score (artists represent the nodes in our network) and we 
-extracted their associated genres. In the figure, we notice that some genres, such as ambient house and indie 
-have a higher sentiment score than the others, such as punk and alternative dance. Considering that house and indie have
-met a wide success in the 90's, with famous artists such as Oasis, it is no surprise that the genre is associated 
-with "happier" sentiments.
-![alt text for screen readers](/staacked_1.png "Network visualisation")
-
-<img alt="alt text for screen readers" height="500" src="staacked_1.png" width="500"/>
-
-We continued our analysis with an overview of the LabMT score, number of on the Billboard chart and number of 
-collaborations, aggregated per year. We notice that specific genres such as hip-hop, rap and acoustic rock are more 
-prone to a higher number of collaborations, as well as a higher number of average weeks in chart. The plotted 
-dataframe is sorted by the average sentiment, from left to right on the x-axis, suggesting that, across the board, 
-a higher sentiment score may be correlated with a larger number of collaborations and weeks in chart and that it may 
-be genre-specific. We will analyze the relationship between sentiment, number of collaborations and weeks on the 
-Billboard chart further.
+extracted their associated genres. In the figure, we notice that some genres, such as ambient house and chicago indie 
+have a higher sentiment score than the others, such as dance-punk and alternative dance. it is no surprise that the 
+genres house and indie are associated with "happier" sentiments, considering that for example indie has successful
+artists such as Oasis and The cure.
 
 ![alt text for screen readers](/comm_stacked.png "Network visualisation")
 <img alt="alt text for screen readers" height="500" src="comm_stacked.png" width="500"/>
     
 Next, we examined the relationship between average sentiment per community and the number of collaborations, 
-as well as the number of weeks on the Billboard chart. The plot indicates that the most negative communities of 
+as well as the number of weeks on the Billboard chart. The plot is in ascending order of sentiment from
+left to right. The plot indicates that the most negative communities of 
 genres (the leftmost ones) have a slightly higher number of collaborations compared to the most positive ones. 
 However, it may be difficult to make such a statement by looking only at the communities of genres. That is why we 
-will continue our analysis by trying to determine whether the number of collaborations and the number of weeks on 
+will continue our analysis by trying to determine whether the number of collaborations and the number of weeks on
 chart are indeed measures of success for popular artists.
 ![alt text for screen readers](/top30_lencollabs.png "Network visualisation")
 <img alt="alt text for screen readers" height="500" src="top30_lencollabs.png" width="500"/>
 
-The plot in above presents a distribution of the number of weeks in the Billboard chart by top 30 most connected 
-artists and associated genres. The colorbar at the bottom indicates the LabMT sentiment score colored from the most 
-negative (purple) to the most positive (yellow) one. We notice that the genres with the largest cummulative number of
-weeks on chart have an overall neutral to more negative sentiment with the expcetion of "freak folk" which stands out 
-as being surprisingly positive. However, the number of weeks on chart seem to be quite uniformly distributed for the 
-top 30 artists, being in the range of 11 to 15.
+The plot above presents a distribution of the number of weeks on the Billboard chart for the top 30 most connected 
+artists and their associated genres. The colorbar at the bottom indicates the LabMT sentiment score colored from the most 
+negative (purple) to the most positive (yellow) one. We notice that the artists and associated genres with the 
+largest cumulative number of weeks on chart have an overall neutral to more negative sentiment, with the 
+exception of "freak folk" which stands out as being surprisingly positive. However, the number of weeks on chart 
+seems to be quite uniformly distributed for the top 30 artists, being in the range of 10 to 17.
 
 All in all, from the sentiment analysis part, we can conclude that genres such as hip hop, cal rap, southers trap, 
-smooth jazz, soundtrack, trance are more prone to a larger number of collaborations and a greater number of weeks in 
-chart and they are associated with a lower to neutral sentiment compared to the others. From the analysis of the 
-communities of genres, we can infer that communities where the dominant genres are: britpop boy bands, alternative 
-pop, alternative rock have a greater number of collaborations, but they are not necessarily associated with a 
+smooth jazz, soundtrack and trance are more prone to a larger number of collaborations and a greater number of weeks in 
+chart, and they are associated with a lower to neutral sentiment compared to the others. From the analysis of the 
+communities of genres, we can infer that communities where the dominant genres are britpop boy bands, alternative 
+pop and alternative rock have a greater number of collaborations, but they are not necessarily associated with a 
 specific sentiment. From the analysis of the top 30 artists by popularity, we can infer that genres such as 
-dancehall, smooth jazz, disco jazz, have a high number of colllabs and lower sentiment score; genres such as 
-girl(boy) bands have a lower number of colllabs and a lower sentiment score.
+dancehall, smooth jazz and disco jazz have a high number of collabs and lower sentiment score; genres such as 
+girl(boy) bands have a lower number of collabs and a lower sentiment score.
 
 Put in perspective, we find that the interplay between sentiment score, lexical richness, weeks on chart and the 
 number of collaborations may be statistically significant.  However, we expect that the sentiment plays a small 
@@ -211,11 +201,33 @@ role in the prediction of an artists' collaborations or number of weeks on chart
 factors influence the number of collaborations, we decided to run a number of regression models in the following 
 section.
 
+## Collaboration prediction
 
-## Conclusion
+Having found earlier that the in- and out-degrees are strong predictors for weeks on chart, we analyze what factors 
+determine that two artists would work together.
 
+In order to train a logistic regression model predicting the probability of an artist interaction, we prepared a 
+number of features summing up differences and things shared by a pair of artists. The results of the trained models 
+are satisfying, as we have achieved F1 score equal to 0.81 on the test set. The model is useful two-fold, as it 
+not only allows us to run predictions, but also gives an insight into the importance of each factor. Here, we display 
+the models weights:
 
+![alt text for screen readers](/predictions_ridge_1.png "Network visualisation")
+![alt text for screen readers](/predictions_ridge_weights.png "Network visualisation")
 
+Among the features we see that the two most important groups are audio- and degree-based features. There are two 
+main outtakes: the bigger difference between sound styles of two artists, the smaller the chance of them 
+collaborating, also it helps that both artists have already been on the charts. The more, the better for the 
+collaboration chances.
 
-### Lalala
-Hasta manana
+## Conclusions
+
+What does it take to become a successful artist? Clearly, there is an aspect of art that we cannot easily grasp in 
+this analysis. We cannot encapsulate a musicians talent with simple measures like "danceability" and "energy". Also, 
+it is controversial to assume that artists success can be measured with the time they spent in charts, however we 
+need to find the best proxy we can think of.
+
+Our analysis shows that there are two main factors that correlate with artists success, namely the number of 
+collaborations and similarity to other musicians sound. Artists seeking the kind of success we measure in this 
+project could actively seek to collaborate with other musicians and increase the chance for opportunity to 
+collaborate by choosing their genre to one of the most popular ones.
