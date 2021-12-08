@@ -69,7 +69,7 @@ The in and out-degrees distributions are following:
 ![alt text for screen readers](/network_vis.png "Network visualisation").
 ![alt text for screen readers](/out_degree.png "Network visualisation").
 
-
+Both these distributions follow the Power Law
 
 ### Lalala
 Hasta manana
