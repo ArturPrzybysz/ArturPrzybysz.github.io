@@ -43,7 +43,7 @@ This means that the kinds of interactions that our network models are the follow
 Following this procedure we obtained a network which has 2763 nodes and 15108 edges. 
 A visualisation of the network can be seen below.`
 
-![alt text for screen readers](/network_vis.png "Text to show on mouseover").
+![alt text for screen readers](/network_vis.png "Network visualisation").
 
 For visualisation clarity, we decided to only display the names of the nodes
 with at least 50 collaborations. This highlights the artists with the most collaborations.
@@ -55,15 +55,21 @@ of rappers, where we can see N.A.S., Snoop Dogg and The Notorious Bigg.
 
 The network's statistics are following:
 
-| **Network statistic**                       | **Statistics' value**                                                                      |
-|---------------------------------------------|--------------------------------------------------------------------------------------------|
-| average in-degree                           | 4.4                                                                                        |
-| average out-degree                          | 4.4                                                                                        |
-| Average degree (in and out)                 | 8.8                                                                                        |
-| Nodes with highest degree of centrality     | Led Zeppelin, Mariah carey, Celine Dion                                                    |
-| Top connected artists (in-degree)           | The Beatles with 82 references                                                             |
-| Top connected artists (out-degree)          | Alanis Morissette with 108 albums                                                          |
+|            **Network statistic**            |                                   **Statistics' value**                                    |
+|:-------------------------------------------:|:------------------------------------------------------------------------------------------:|
+|              average in-degree              |                                            4.4                                             |
+|             average out-degree              |                                            4.4                                             |
+|         Average degree (in and out)         |                                            8.8                                             |
+|   Nodes with highest degree of centrality   |                          Led Zeppelin, Mariah carey, Celine Dion                           |
+|      Top connected artists (in-degree)      |                               The Beatles with 82 references                               |
+|     Top connected artists (out-degree)      |                             Alanis Morissette with 108 albums                              |
 | Pairs of artists that collaborated the most | Radiohead - Nigel Godrich (30 times), Opeth - Bloodbath (30), Radiohead - John Leckie (29) |
+
+
+The in and out-degrees are following:
+![alt text for screen readers](/in_degree.png "Degrees").
+![alt text for screen readers](/out_degree.png "Degrees").
+
 
 
 ### Lalala

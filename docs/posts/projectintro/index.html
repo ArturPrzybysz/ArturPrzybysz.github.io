@@ -39,7 +39,7 @@ We will first introduce you to the dataset we have created, then we will attempt
 We will first introduce you to the dataset we have created, then we will attempt to predict an artists&rsquo; success directly. Finally, we get insight into the nature of collaborations between artists, as we find that number of partnerships strongly correlates with artists&rsquo; popularity.">
 <meta itemprop="datePublished" content="2021-12-08T15:04:05&#43;01:00" />
 <meta itemprop="dateModified" content="2021-12-08T15:04:05&#43;01:00" />
-<meta itemprop="wordCount" content="554">
+<meta itemprop="wordCount" content="562">
 
 
 
@@ -150,7 +150,7 @@ This means that the kinds of interactions that our network models are the follow
 </ul>
 <p>Following this procedure we obtained a network which has 2763 nodes and 15108 edges.
 A visualisation of the network can be seen below.`</p>
-<p><img src="/network_vis.png" alt="alt text for screen readers" title="Text to show on mouseover">.</p>
+<p><img src="/network_vis.png" alt="alt text for screen readers" title="Network visualisation">.</p>
 <p>For visualisation clarity, we decided to only display the names of the nodes
 with at least 50 collaborations. This highlights the artists with the most collaborations.
 The positions of the nodes have been calculated using the ForceAtlas2 algorithm [REFERENCE TODO].
@@ -162,41 +162,44 @@ of rappers, where we can see N.A.S., Snoop Dogg and The Notorious Bigg.</p>
 <table>
 <thead>
 <tr>
-<th><strong>Network statistic</strong></th>
-<th><strong>Statistics&rsquo; value</strong></th>
+<th align="center"><strong>Network statistic</strong></th>
+<th align="center"><strong>Statistics&rsquo; value</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>average in-degree</td>
-<td>4.4</td>
+<td align="center">average in-degree</td>
+<td align="center">4.4</td>
 </tr>
 <tr>
-<td>average out-degree</td>
-<td>4.4</td>
+<td align="center">average out-degree</td>
+<td align="center">4.4</td>
 </tr>
 <tr>
-<td>Average degree (in and out)</td>
-<td>8.8</td>
+<td align="center">Average degree (in and out)</td>
+<td align="center">8.8</td>
 </tr>
 <tr>
-<td>Nodes with highest degree of centrality</td>
-<td>Led Zeppelin, Mariah carey, Celine Dion</td>
+<td align="center">Nodes with highest degree of centrality</td>
+<td align="center">Led Zeppelin, Mariah carey, Celine Dion</td>
 </tr>
 <tr>
-<td>Top connected artists (in-degree)</td>
-<td>The Beatles with 82 references</td>
+<td align="center">Top connected artists (in-degree)</td>
+<td align="center">The Beatles with 82 references</td>
 </tr>
 <tr>
-<td>Top connected artists (out-degree)</td>
-<td>Alanis Morissette with 108 albums</td>
+<td align="center">Top connected artists (out-degree)</td>
+<td align="center">Alanis Morissette with 108 albums</td>
 </tr>
 <tr>
-<td>Pairs of artists that collaborated the most</td>
-<td>Radiohead - Nigel Godrich (30 times), Opeth - Bloodbath (30), Radiohead - John Leckie (29)</td>
+<td align="center">Pairs of artists that collaborated the most</td>
+<td align="center">Radiohead - Nigel Godrich (30 times), Opeth - Bloodbath (30), Radiohead - John Leckie (29)</td>
 </tr>
 </tbody>
 </table>
+<p>The in and out-degrees are following:
+<img src="/in_degree.png" alt="alt text for screen readers" title="Degrees">.
+<img src="/out_degree.png" alt="alt text for screen readers" title="Degrees">.</p>
 <h3 id="lalala">Lalala</h3>
 <p>Hasta manana</p>
 <ul class="pa0">
