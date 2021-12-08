@@ -93,9 +93,9 @@ We want to examine the attributes of our nodes, to see if there is any correlati
 the success of an artist. For this, we made a scatter plot of each node attributes against the weeks on chart and
 computed the pearson correlation between these. See the scatter plot below.
 
-![alt text for screen readers](/scatter1.png)
+<img alt="alt text for screen readers" height="500" src="/scatter1.png" width="500"/>
 
-![alt text for screen readers](/scatter2.png)
+<img alt="alt text for screen readers" height="500" src="/scatter2.png" width="500"/>
 
 From this, we found that there was a strong correlation between the number of weeks an artist had on the Billboard
 charts and their number of collaborations.  This is interesting, as it points to the idea that the more popular you are
