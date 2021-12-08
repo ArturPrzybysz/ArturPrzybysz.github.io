@@ -160,6 +160,48 @@ have a higher sentiment score than the others, such as hip-hop and punk. Conside
 wide success in the 90's, with famous bands such as Destiny's Child and Spicy Girls, it is no surprise that the 
 genre is associated with very happy sentiments.
 
+<img alt="alt text for screen readers" height="500" src="staacked_1 .png" width="500"/>
+
+We continued our analysis with an overview of the LabMT score, number of on the Billboard chart and number of 
+collaborations, aggregated per year. We notice that specific genres such as hip-hop, rap and acoustic rock are more 
+prone to a higher number of collaborations, as well as a higher number of average weeks in chart. The plotted 
+dataframe is sorted by the average sentiment, from left to right on the x-axis, suggesting that, across the board, 
+a higher sentiment score may be correlated with a larger number of collaborations and weeks in chart and that it may 
+be genre-specific. We will analyze the relationship between sentiment, number of collaborations and weeks on the 
+Billboard chart further.
+
+<img alt="alt text for screen readers" height="500" src="comm_stacked.png" width="500"/>
+    
+Next, we examined the relationship between average sentiment per community and the number of collaborations, 
+as well as the number of weeks on the Billboard chart. The plot indicates that the most negative communities of 
+genres (the leftmost ones) have a slightly higher number of collaborations compared to the most positive ones. 
+However, it may be difficult to make such a statement by looking only at the communities of genres. That is why we 
+will continue our analysis by trying to determine whether the number of collaborations and the number of weeks on 
+chart are indeed measures of success for popular artists.
+
+<img alt="alt text for screen readers" height="500" src="top30_lencollabs.png" width="500"/>
+
+The plot in above presents a distribution of the number of weeks in the Billboard chart by top 30 most connected 
+artists and associated genres. The colorbar at the bottom indicates the LabMT sentiment score colored from the most 
+negative (purple) to the most positive (yellow) one. We notice that the genres with the largest cummulative number of
+weeks on chart have an overall neutral to more negative sentiment with the expcetion of "freak folk" which stands out 
+as being surprisingly positive. However, the number of weeks on chart seem to be quite uniformly distributed for the 
+top 30 artists, being in the range of 11 to 15.
+
+All in all, from the sentiment analysis part, we can conclude that genres such as hip hop, cal rap, southers trap, 
+smooth jazz, soundtrack, trance are more prone to a larger number of collaborations and a greater number of weeks in 
+chart and they are associated with a lower to neutral sentiment compared to the others. From the analysis of the 
+communities of genres, we can infer that communities where the dominant genres are: britpop boy bands, alternative 
+pop, alternative rock have a greater number of collaborations, but they are not necessarily associated with a 
+specific sentiment. From the analysis of the top 30 artists by popularity, we can infer that genres such as 
+dancehall, smooth jazz, disco jazz, have a high number of colllabs and lower sentiment score; genres such as 
+girl(boy) bands have a lower number of colllabs and a lower sentiment score.
+
+Put in perspective, we find that the interplay between sentiment score, lexical richness, weeks on chart and the 
+number of collaborations may be statistically significant.  However, we expect that the sentiment plays a small 
+role in the prediction of an artists' collaborations or number of weeks on chart. In order to investigate what 
+factors influence the number of collaborations, we decided to run a number of regression models in the following 
+section.
 ## Conclusion
 
 
