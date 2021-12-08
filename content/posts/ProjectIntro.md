@@ -43,7 +43,7 @@ This means that the kinds of interactions that our network models are the follow
 Following this procedure we obtained a network which has 2763 nodes and 15108 edges. 
 A visualisation of the network can be seen below.`
 
-![alt text for screen readers](/network_vis.png "Network visualisation").
+<img src="/network_vis.png" alt="drawing" width="300"/>
 
 For visualisation clarity, we decided to only display the names of the nodes
 with at least 50 collaborations. This highlights the artists with the most collaborations.
@@ -67,8 +67,8 @@ The network's statistics are following:
 
 
 The in and out-degrees are following:
-![alt text for screen readers](/in_degree.png "Degrees").
-![alt text for screen readers](/out_degree.png "Degrees").
+<img src="/in_degree.png" alt="drawing" width="300"/>
+<img src="/out_degree.png" alt="drawing" width="300"/>
 
 
 
