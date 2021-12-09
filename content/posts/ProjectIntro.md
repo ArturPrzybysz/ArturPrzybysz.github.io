@@ -118,13 +118,13 @@ are important?
 As mentioned earlier, we have used the Louvain algorithm [(ref)](https://arxiv.org/abs/0803.0476) to partition the artists (our nodes) into
 communities. We have 16 communities. In order to understand these communities better, i.e. what they represent,
 we can look at what is important to them. For this, we will be using the lyrics from each artists' albums.
-For each community, a select number of song lyrics of the artist's in that community are analyzed using the TFIDF
+For each community, a selected number of song lyrics of the artist's in that community are analyzed using the TFIDF
 score [(ref)](https://en.wikipedia.org/wiki/Tf%E2%80%93idf). We have then used this to make word clouds of the communities lyrics. A select number of these
 can be seen below.
 
-![alt text for screen readers](/wordcloud1.png)
-![alt text for screen readers](/wordcloud2.png)
-![alt text for screen readers](/wordcloud3.png)
+![alt text for screen readers](/wordclouds_1.png)
+![alt text for screen readers](/wordclouds_2.png)
+![alt text for screen readers](/wordclouds_3.png)
 
 
 To give an even better understanding, in the title of each word cloud, we have added the top 3 artists in that community
