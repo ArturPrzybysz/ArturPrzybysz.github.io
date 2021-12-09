@@ -120,8 +120,8 @@ For each community, a selected number of song lyrics of the artist's in that com
 score)](https://en.wikipedia.org/wiki/Tf%E2%80%93idf). We have then used this to make word clouds of the communities lyrics. A select number of these
 can be seen below.
 
-![alt text for screen readers](/wordclouds_1.png)
-![alt text for screen readers](/wordclouds_2.png)
+![alt text for screen readers](/cloud1.png)
+![alt text for screen readers](/worcloud222.png)
 
 [//]: # (![alt text for screen readers]&#40;/wordclouds_3.png&#41;)
 
@@ -154,7 +154,7 @@ histogram above, we notice that the values of sentiment score for LabMT method l
 The histogram follows a Gaussian distribution, with most values centered around 5, but with the entire distribution 
 being slightly right-skewed. 
 
-![alt text for screen readers](/labmt_genre_updated.png )
+![alt text for screen readers](/orange.png )
 
 We found the analysis of the sentiment score per genre to be promising, which is why we filtered 
 our network for the top 30 most artists by sentiment score (artists represent the nodes in our network) and we 
