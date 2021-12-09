@@ -31,7 +31,7 @@ We will first introduce you to the dataset we have created, then we will attempt
 <meta property="og:description" content="Project introduction In this project we are looking for an answer to the question: &ldquo;What makes artists successful?&quot;. In order to find the answer we collect a wide range of data regarding artists&rsquo; interactions, their artistic creations and popularity of their work.
 We will first introduce you to the dataset we have created, then we will attempt to predict an artists&rsquo; success directly. Finally, we get insight into the nature of collaborations between artists, as we find that number of partnerships strongly correlates with artists&rsquo; popularity." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://arturprzybysz.github.io/posts/projectintro/" />
+<meta property="og:url" content="https://arturprzybysz.github.io/posts/project/" />
 <meta property="article:published_time" content="2021-12-08T15:04:05+01:00" />
 <meta property="article:modified_time" content="2021-12-08T15:04:05+01:00" />
 <meta itemprop="name" content="90&#39;s music data analysis">
@@ -39,7 +39,7 @@ We will first introduce you to the dataset we have created, then we will attempt
 We will first introduce you to the dataset we have created, then we will attempt to predict an artists&rsquo; success directly. Finally, we get insight into the nature of collaborations between artists, as we find that number of partnerships strongly correlates with artists&rsquo; popularity.">
 <meta itemprop="datePublished" content="2021-12-08T15:04:05&#43;01:00" />
 <meta itemprop="dateModified" content="2021-12-08T15:04:05&#43;01:00" />
-<meta itemprop="wordCount" content="2276">
+<meta itemprop="wordCount" content="2284">
 
 
 
@@ -125,7 +125,7 @@ their artistic creations and popularity of their work.</p>
 <p>We will first introduce you to the dataset we have created, then we will attempt to predict an artists&rsquo; success directly.
 Finally, we get insight into the nature of collaborations between artists,
 as we find that number of partnerships strongly correlates with artists&rsquo; popularity.</p>
-<p>You can watch our teaser video here: <a href="https://www.youtube.com/watch?v=DqjzWKfjZJc"><img src="https://yt-embed.herokuapp.com/embed?v=DqjzWKfjZJc" alt="here"></a></p>
+<p>You can watch our teaser video: <a href="https://www.kaggle.com/danield2255/data-on-songs-from-billboard-19992019">here!</a></p>
 <h2 id="dataset">Dataset</h2>
 <p>The core part of our dataset comes from Wikipedia pages listing all the albums released from 1990-1999.
 There is one Wikipedia page for each year, with a title in the form “199X_in_music”,
@@ -137,7 +137,8 @@ APIs by Spotify or Genius to get insight into popularity, sound and lyric featur
 From Spotify we retrieved song features such as danceability and energy.
 From Billboard we retrieved data on which albums made it into the top charts and for how long.
 From Genius we retrieved lyrics of the songs of the artists.
-For a more detailed explanation of the dataset, please refer to our <a href="https://github.com/daz261/SocialGraphs/blob/main/project/Explainer_Notebook_Final.ipynb">(EXPLAINER NOTEBOOK)</a>.</p>
+For a more detailed explanation of the dataset, please refer to explainer notebook available under
+<a href="https://github.com/daz261/SocialGraphs/blob/main/Explainer_Notebook_Final.ipynb">(ref)</a>.</p>
 <p>Once we combined all this data, we used our dataset for data analysis, looking to find what makes an artist successful.</p>
 <h2 id="data-exploration">Data exploration</h2>
 <p>We begin our analysis by creating a network of artists, where the nodes are artists and the edges are collaborations among artists
@@ -159,13 +160,13 @@ Each node in the network has the following attributes:</p>
 <li>last_week: The last week one of the artists&rsquo; albums was on the charts.</li>
 <li>in_degree: The total number of in-references to the artist.</li>
 <li>out_degree: The total number of out-references the artist has.</li>
-<li>partition_id: The community the artist is placed in using the <a href="https://arxiv.org/abs/0803.0476">(louvain algorithm)</a>.</li>
+<li>partition_id: The community the artist is placed in using the louvain algorithm <a href="https://arxiv.org/abs/0803.0476">(ref)</a>.</li>
 </ul>
 <p>A visualisation of the network can be seen below.`</p>
 <p><img src="/network_vis.png" alt="alt text for screen readers">.</p>
 <p>For visualisation clarity, we decided to only display the names of the nodes
 with at least 50 collaborations. This highlights the artists with the most collaborations.
-The positions of the nodes have been calculated using the ForceAtlas2 <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0098679">(algorithm)</a>.
+The positions of the nodes have been calculated using the ForceAtlas2 algorithm <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0098679">(ref)</a>.
 We can see that the artists have been positioned in such a way, that they are close
 to artists, that they collaborate with the most. This results in emerging of clusters.
 We hypothesise, that it is highly influenced by artists&rsquo; genre. A very good example of this is a group
@@ -235,18 +236,18 @@ analysis on them, to see if there is something we can learn from this. Is there 
 an artists&rsquo; albums and their success? Does the genre of their music have an influence? Are there other factors that
 are important?</p>
 <h2 id="word-clouds">Word Clouds</h2>
-<p>As mentioned earlier, we have used the <a href="https://arxiv.org/abs/0803.0476">(Louvain algorithm)</a> to partition the artists (our nodes) into
+<p>As mentioned earlier, we have used the Louvain algorithm <a href="https://arxiv.org/abs/0803.0476">(ref)</a> to partition the artists (our nodes) into
 communities. We have 16 communities. In order to understand these communities better, i.e. what they represent,
 we can look at what is important to them. For this, we will be using the lyrics from each artists&rsquo; albums.
-For each community, a selected number of song lyrics of the artist&rsquo;s in that community are analyzed using the <a href="https://en.wikipedia.org/wiki/Tf%E2%80%93idf">(TFIDF
-score)</a>. We have then used this to make word clouds of the communities lyrics. A select number of these
+For each community, a selected number of song lyrics of the artist&rsquo;s in that community are analyzed using the TFIDF
+score <a href="https://en.wikipedia.org/wiki/Tf%E2%80%93idf">(ref)</a>. We have then used this to make word clouds of the communities lyrics. A select number of these
 can be seen below.</p>
-<p><img src="/wordclouds_1.png" alt="alt text for screen readers">
-<img src="/wordclouds_2.png" alt="alt text for screen readers"></p>
+<p><img src="/cloud1.png" alt="alt text for screen readers">
+<img src="/worcloud222.png" alt="alt text for screen readers"></p>
 <p>To give an even better understanding, in the title of each word cloud, we have added the top 3 artists in that community
 (the artists that have the most connections). These artists are meant to represent the communities in a way.
 We see that in the word cloud where the top artists are Nas, The Notorious B.I.G. and a Tribe Called Quest, the biggest
-words are typical rap lyrics that were found a lot in <a href="https://rateyourmusic.com/list/theu003/top_100_rap_verses_of_the_1990s/">(90&rsquo;s rap music)</a>.
+words are typical rap lyrics that were found a lot in 90&rsquo;s rap music <a href="https://rateyourmusic.com/list/theu003/top_100_rap_verses_of_the_1990s/">(ref)</a>.
 On the other side, the word cloud with the top artist&rsquo;s Weird Al Yankovic, The Red Hot Chili Peppers and The Foo Fighters
 have words more in the genre of rock. The last word cloud, with the top artist&rsquo;s Paul McCartney, John Lennon
 and Ringo Starr has more hippy lyrics, which probably doesn&rsquo;t surprise anyone, with its top artist&rsquo;s being
@@ -255,15 +256,16 @@ members of the Beatles :-)</p>
 <p>The purpose of the sentiment analysis part is to analyze the lyrics of different artists and albums in order
 to determine if the sentiment score for each album in the network is influenced by specific features such as
 genre, year, trend in the number of collaborations etc. Ultimately, the analysis of this part investigates the
-interplay between the <a href="https://arxiv.org/abs/1512.00531">(LabMT sentiment score)</a> and features such as number of collaborations or weeks in chart.
+interplay between the LabMT sentiment score <a href="https://arxiv.org/abs/1512.00531">(ref)</a> and features such as number of collaborations or weeks in chart.
 In order to do so, we broke down our analysis into 3 levels: exploratory sentiment analysis of all the artists in
 the network, analysis of communities of artists and associated genres and analysis of the most successful artists.</p>
-<p><img src="/labmt_1.png" alt="alt text for screen readers"></p>
+<p><img src="/histogram_sentiment.png" alt="alt text for screen readers"></p>
 <p>For the purpose of this analysis, we found that LabMT is the most robust method to analyze our lyrics. From the
 histogram above, we notice that the values of sentiment score for LabMT method lie between 4.9 and 5.095.
 The histogram follows a Gaussian distribution, with most values centered around 5, but with the entire distribution
 being slightly right-skewed.</p>
 <p><img src="/labmt_genre_updated.png" alt="alt text for screen readers"></p>
+<p><img src="/labmt_genres_top.png" alt="alt text for screen readers"></p>
 <p>We found the analysis of the sentiment score per genre to be promising, which is why we filtered
 our network for the top 30 most artists by sentiment score (artists represent the nodes in our network) and we
 extracted their associated genres. In the figure, we notice that some genres, such as ambient house and chicago indie
