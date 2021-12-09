@@ -146,7 +146,7 @@ interplay between the [(LabMT sentiment score)](https://arxiv.org/abs/1512.00531
 In order to do so, we broke down our analysis into 3 levels: exploratory sentiment analysis of all the artists in 
 the network, analysis of communities of artists and associated genres and analysis of the most successful artists.
 
-![alt text for screen readers](/labmt_1.png )
+![alt text for screen readers](/histogram_sentiment.png )
 
 
 For the purpose of this analysis, we found that LabMT is the most robust method to analyze our lyrics. From the 
