@@ -13,7 +13,7 @@ We will first introduce you to the dataset we have created, then we will attempt
 Finally, we get insight into the nature of collaborations between artists,
 as we find that number of partnerships strongly correlates with artists' popularity.
 
-You can watch our teaser video here: [![here](https://yt-embed.herokuapp.com/embed?v=DqjzWKfjZJc)](https://www.youtube.com/watch?v=DqjzWKfjZJc)
+You can watch our teaser video here: [![here](https://yt-embed.herokuapp.com/embed?v=OMDIm40BQ8s)](https://www.youtube.com/watch?v=OMDIm40BQ8s)
 ## Dataset
 
 The core part of our dataset comes from Wikipedia pages listing all the albums released from 1990-1999. 
@@ -21,7 +21,7 @@ There is one Wikipedia page for each year, with a title in the form “199X_in_m
 where all the albums released are being listed.  We combine it with a number of other sources, 
 like other wikipedia pages we used to retrieve more detailed information on artists and each of the albums, 
 which let us map the collaboration between artists. We use publicly available dataset such as 
-[Billboard dataset from Kaggle](https://www.youtube.com/watch?v=OMDIm40BQ8s), 
+[Billboard dataset from Kaggle](https://www.kaggle.com/danield2255/data-on-songs-from-billboard-19992019), 
 APIs by Spotify or Genius to get insight into popularity, sound and lyric features.
 From Spotify we retrieved song features such as danceability and energy.
 From Billboard we retrieved data on which albums made it into the top charts and for how long.
