@@ -212,7 +212,7 @@ not only allows us to run predictions, but also gives an insight into the import
 the models weights:
 
 ![alt text for screen readers](/predictions_ridge_1.png )
-![alt text for screen readers](/predictions_ridge_weights.png )
+![alt text for screen readers](/prediction_ridge_weights.png )
 
 Among the features we see that the two most important groups are audio- and degree-based features. There are two 
 main outtakes: the bigger difference between sound styles of two artists, the smaller the chance of them 
