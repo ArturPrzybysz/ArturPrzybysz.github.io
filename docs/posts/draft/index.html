@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>90&#39;s music data analysis | </title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Project introduction In this project we are looking for an answer to the question: &ldquo;What makes artists successful?&quot;. In order to find the answer we collect a wide range of data regarding artists&rsquo; interactions, their artistic creations and popularity of their work.
+We will first introduce you to the dataset we have created, then we will attempt to predict an artists&rsquo; success directly. Finally, we get insight into the nature of collaborations between artists, as we find that number of partnerships strongly correlates with artists&rsquo; popularity.">
+    <meta name="generator" content="Hugo 0.68.3" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="90&#39;s music data analysis" />
+<meta property="og:description" content="Project introduction In this project we are looking for an answer to the question: &ldquo;What makes artists successful?&quot;. In order to find the answer we collect a wide range of data regarding artists&rsquo; interactions, their artistic creations and popularity of their work.
+We will first introduce you to the dataset we have created, then we will attempt to predict an artists&rsquo; success directly. Finally, we get insight into the nature of collaborations between artists, as we find that number of partnerships strongly correlates with artists&rsquo; popularity." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://arturprzybysz.github.io/posts/draft/" />
+<meta property="article:published_time" content="2021-12-08T15:04:05+01:00" />
+<meta property="article:modified_time" content="2021-12-08T15:04:05+01:00" />
+<meta itemprop="name" content="90&#39;s music data analysis">
+<meta itemprop="description" content="Project introduction In this project we are looking for an answer to the question: &ldquo;What makes artists successful?&quot;. In order to find the answer we collect a wide range of data regarding artists&rsquo; interactions, their artistic creations and popularity of their work.
+We will first introduce you to the dataset we have created, then we will attempt to predict an artists&rsquo; success directly. Finally, we get insight into the nature of collaborations between artists, as we find that number of partnerships strongly correlates with artists&rsquo; popularity.">
+<meta itemprop="datePublished" content="2021-12-08T15:04:05&#43;01:00" />
+<meta itemprop="dateModified" content="2021-12-08T15:04:05&#43;01:00" />
+<meta itemprop="wordCount" content="2276">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="90&#39;s music data analysis"/>
+<meta name="twitter:description" content="Project introduction In this project we are looking for an answer to the question: &ldquo;What makes artists successful?&quot;. In order to find the answer we collect a wide range of data regarding artists&rsquo; interactions, their artistic creations and popularity of their work.
+We will first introduce you to the dataset we have created, then we will attempt to predict an artists&rsquo; success directly. Finally, we get insight into the nature of collaborations between artists, as we find that number of partnerships strongly correlates with artists&rsquo; popularity."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">90&#39;s music data analysis</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2021-12-08T15:04:05+01:00">December 8, 2021</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id="project-introduction">Project introduction</h2>
+<p>In this project we are looking for an answer to the question: &ldquo;What makes artists successful?&quot;.
+In order to find the answer we collect a wide range of data regarding artists&rsquo; interactions,
+their artistic creations and popularity of their work.</p>
+<p>We will first introduce you to the dataset we have created, then we will attempt to predict an artists&rsquo; success directly.
+Finally, we get insight into the nature of collaborations between artists,
+as we find that number of partnerships strongly correlates with artists&rsquo; popularity.</p>
+<p>You can watch our teaser video here: <a href="https://www.youtube.com/watch?v=DqjzWKfjZJc"><img src="https://yt-embed.herokuapp.com/embed?v=DqjzWKfjZJc" alt="here"></a></p>
+<h2 id="dataset">Dataset</h2>
+<p>The core part of our dataset comes from Wikipedia pages listing all the albums released from 1990-1999.
+There is one Wikipedia page for each year, with a title in the form “199X_in_music”,
+where all the albums released are being listed.  We combine it with a number of other sources,
+like other wikipedia pages we used to retrieve more detailed information on artists and each of the albums,
+which let us map the collaboration between artists. We use publicly available dataset such as
+<a href="https://www.youtube.com/watch?v=OMDIm40BQ8s">Billboard dataset from Kaggle</a>,
+APIs by Spotify or Genius to get insight into popularity, sound and lyric features.
+From Spotify we retrieved song features such as danceability and energy.
+From Billboard we retrieved data on which albums made it into the top charts and for how long.
+From Genius we retrieved lyrics of the songs of the artists.
+For a more detailed explanation of the dataset, please refer to our <a href="https://github.com/daz261/SocialGraphs/blob/main/Explainer_Notebook_Final.ipynb">(EXPLAINER NOTEBOOK)</a>.</p>
+<p>Once we combined all this data, we used our dataset for data analysis, looking to find what makes an artist successful.</p>
+<h2 id="data-exploration">Data exploration</h2>
+<p>We begin our analysis by creating a network of artists, where the nodes are artists and the edges are collaborations among artists
+through albums. To get the collaborations, we looked in every albums&rsquo; wikipedia page and searched for references to other artists.
+This means that the kinds of interactions that our network models are the following:</p>
+<ul>
+<li>collaborations in which musicians were co-creating another artists&rsquo; album by playing instruments, singing or producing them,</li>
+<li>songwriters in the albums</li>
+<li>inspirations and covers</li>
+<li>former bands of the album authors.</li>
+</ul>
+<p>Following this procedure we obtained a network which has 2763 nodes and 15108 edges.<br>
+Each node in the network has the following attributes:</p>
+<ul>
+<li>Spotify album features (danceability, energy, loudness, mode, speechiness, acousticness, instrumentalness, liveness, valence, tempo): The average value of every attribute is found for each album.</li>
+<li>Genres: All the genres associated with an artist.</li>
+<li>peak_rank: The highest rank an artist has achieved on the Billboard charts.</li>
+<li>weeks_on_chart: The accumulation of weeks on chart for all the artists&rsquo; albums.</li>
+<li>last_week: The last week one of the artists&rsquo; albums was on the charts.</li>
+<li>in_degree: The total number of in-references to the artist.</li>
+<li>out_degree: The total number of out-references the artist has.</li>
+<li>partition_id: The community the artist is placed in using the <a href="https://arxiv.org/abs/0803.0476">(louvain algorithm)</a>.</li>
+</ul>
+<p>A visualisation of the network can be seen below.`</p>
+<p><img src="/network_vis.png" alt="alt text for screen readers">.</p>
+<p>For visualisation clarity, we decided to only display the names of the nodes
+with at least 50 collaborations. This highlights the artists with the most collaborations.
+The positions of the nodes have been calculated using the ForceAtlas2 <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0098679">(algorithm)</a>.
+We can see that the artists have been positioned in such a way, that they are close
+to artists, that they collaborate with the most. This results in emerging of clusters.
+We hypothesise, that it is highly influenced by artists&rsquo; genre. A very good example of this is a group
+of rappers, where we can see N.A.S., Snoop Dogg and The Notorious Bigg.</p>
+<p>The network&rsquo;s statistics are following:</p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>Network statistic</strong></th>
+<th align="center"><strong>Statistics&rsquo; value</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">average in-degree</td>
+<td align="center">4.4</td>
+</tr>
+<tr>
+<td align="center">average out-degree</td>
+<td align="center">4.4</td>
+</tr>
+<tr>
+<td align="center">Average degree (in and out)</td>
+<td align="center">8.8</td>
+</tr>
+<tr>
+<td align="center">Nodes with highest degree of centrality</td>
+<td align="center">Led Zeppelin, Mariah carey, Celine Dion</td>
+</tr>
+<tr>
+<td align="center">Top connected artists (in-degree)</td>
+<td align="center">The Beatles with 82 references</td>
+</tr>
+<tr>
+<td align="center">Top connected artists (out-degree)</td>
+<td align="center">Alanis Morissette with 108 albums</td>
+</tr>
+<tr>
+<td align="center">Pairs of artists that collaborated the most</td>
+<td align="center">Radiohead - Nigel Godrich (30 times), Opeth - Bloodbath (30), Radiohead - John Leckie (29)</td>
+</tr>
+</tbody>
+</table>
+<p>The in and out-degrees distributions are following:</p>
+<p><img src="/out_degree.png" alt="alt text for screen readers"></p>
+<p>The linear and log-log in-degree distribution are shown in the figures above.
+Both these distributions follow the Power Law. We notice that there are many nodes with only a few links
+(high frequency) and a few hubs (high degree) with large number of links.
+The linear dependence in the log-log plot supports the idea that indeed, the graph follows the power distribution.</p>
+<p>For this project, we have chosen to use an albums number of weeks on chart as a metric for success.
+We want to examine the attributes of our nodes, to see if there is any correlation between these attributes and
+the success of an artist. For this, we made a scatter plot of each node attributes against the weeks on chart and
+computed the pearson correlation between these. See the scatter plot below.</p>
+<p><img src="/scatter1.png" alt="alt text for screen readers"></p>
+<p><img src="/scatter2.png" alt="alt text for screen readers"></p>
+<p>From this, we found that there was a strong correlation between the number of weeks an artist had on the Billboard
+charts and their number of collaborations.  This is interesting, as it points to the idea that the more popular you are
+(i.e. the more weeks you have on the charts), the more collaborations you have! This is an interesting finding,
+one that we would like to explore further. To do this we will look to determine what factors make two or more artists
+collaborate together (see part Machine Lea). This will give us more insight on what it takes to have many collaborations,
+and thus have more success.</p>
+<p>Before we get to that though, we first want to explore our data further, to see if we find anything interesting.
+We want to examine if there are other factors that are relevant to the success
+of an artist, besides collaborations. For this we will dive into the lyrics of our artists, calculating TF-IDF scores,
+making word clouds and performing sentiment
+analysis on them, to see if there is something we can learn from this. Is there a correlation between sentiment of
+an artists&rsquo; albums and their success? Does the genre of their music have an influence? Are there other factors that
+are important?</p>
+<h2 id="word-clouds">Word Clouds</h2>
+<p>As mentioned earlier, we have used the <a href="https://arxiv.org/abs/0803.0476">(Louvain algorithm)</a> to partition the artists (our nodes) into
+communities. We have 16 communities. In order to understand these communities better, i.e. what they represent,
+we can look at what is important to them. For this, we will be using the lyrics from each artists&rsquo; albums.
+For each community, a selected number of song lyrics of the artist&rsquo;s in that community are analyzed using the <a href="https://en.wikipedia.org/wiki/Tf%E2%80%93idf">(TFIDF
+score)</a>. We have then used this to make word clouds of the communities lyrics. A select number of these
+can be seen below.</p>
+<p><img src="/cloud1.png" alt="alt text for screen readers">
+<img src="/worcloud222.png" alt="alt text for screen readers"></p>
+<p>To give an even better understanding, in the title of each word cloud, we have added the top 3 artists in that community
+(the artists that have the most connections). These artists are meant to represent the communities in a way.
+We see that in the word cloud where the top artists are Nas, The Notorious B.I.G. and a Tribe Called Quest, the biggest
+words are typical rap lyrics that were found a lot in <a href="https://rateyourmusic.com/list/theu003/top_100_rap_verses_of_the_1990s/">(90&rsquo;s rap music)</a>.
+On the other side, the word cloud with the top artist&rsquo;s Weird Al Yankovic, The Red Hot Chili Peppers and The Foo Fighters
+have words more in the genre of rock. The last word cloud, with the top artist&rsquo;s Paul McCartney, John Lennon
+and Ringo Starr has more hippy lyrics, which probably doesn&rsquo;t surprise anyone, with its top artist&rsquo;s being
+members of the Beatles :-)</p>
+<h2 id="sentiment-analysis">Sentiment analysis</h2>
+<p>The purpose of the sentiment analysis part is to analyze the lyrics of different artists and albums in order
+to determine if the sentiment score for each album in the network is influenced by specific features such as
+genre, year, trend in the number of collaborations etc. Ultimately, the analysis of this part investigates the
+interplay between the <a href="https://arxiv.org/abs/1512.00531">(LabMT sentiment score)</a> and features such as number of collaborations or weeks in chart.
+In order to do so, we broke down our analysis into 3 levels: exploratory sentiment analysis of all the artists in
+the network, analysis of communities of artists and associated genres and analysis of the most successful artists.</p>
+<p><img src="/histogram_sentiment.png" alt="alt text for screen readers"></p>
+<p>For the purpose of this analysis, we found that LabMT is the most robust method to analyze our lyrics. From the
+histogram above, we notice that the values of sentiment score for LabMT method lie between 4.9 and 5.095.
+The histogram follows a Gaussian distribution, with most values centered around 5, but with the entire distribution
+being slightly right-skewed.</p>
+<p><img src="/orange.png" alt="alt text for screen readers"></p>
+<p>We found the analysis of the sentiment score per genre to be promising, which is why we filtered
+our network for the top 30 most artists by sentiment score (artists represent the nodes in our network) and we
+extracted their associated genres. In the figure, we notice that some genres, such as ambient house and chicago indie
+have a higher sentiment score than the others, such as dance-punk and alternative dance. it is no surprise that the
+genres house and indie are associated with &ldquo;happier&rdquo; sentiments, considering that for example indie has successful
+artists such as Oasis and The cure.</p>
+<p><img src="/comm_stacked.png" alt="alt text for screen readers"></p>
+<p>Next, we examined the relationship between average sentiment per community and the number of collaborations,
+as well as the number of weeks on the Billboard chart. The plot is in ascending order of sentiment from
+left to right. The plot indicates that the most negative communities of
+genres (the leftmost ones) have a slightly higher number of collaborations compared to the most positive ones.
+However, it may be difficult to make such a statement by looking only at the communities of genres. That is why we
+will continue our analysis by trying to determine whether the number of collaborations and the number of weeks on
+chart are indeed measures of success for popular artists.
+<img src="/top30_lencollabs.png" alt="alt text for screen readers"></p>
+<p>The plot above presents a distribution of the number of weeks on the Billboard chart for the top 30 most connected
+artists and their associated genres. The colorbar at the bottom indicates the LabMT sentiment score colored from the most
+negative (purple) to the most positive (yellow) one. We notice that the artists and associated genres with the
+largest cumulative number of weeks on chart have an overall neutral to more negative sentiment, with the
+exception of &ldquo;freak folk&rdquo; which stands out as being surprisingly positive. However, the number of weeks on chart
+seems to be quite uniformly distributed for the top 30 artists, being in the range of 10 to 17.</p>
+<p>All in all, from the sentiment analysis part, we can conclude that genres such as hip hop, cal rap, southers trap,
+smooth jazz, soundtrack and trance are more prone to a larger number of collaborations and a greater number of weeks in
+chart, and they are associated with a lower to neutral sentiment compared to the others. From the analysis of the
+communities of genres, we can infer that communities where the dominant genres are britpop boy bands, alternative
+pop and alternative rock have a greater number of collaborations, but they are not necessarily associated with a
+specific sentiment. From the analysis of the top 30 artists by popularity, we can infer that genres such as
+dancehall, smooth jazz and disco jazz have a high number of collabs and lower sentiment score; genres such as
+girl(boy) bands have a lower number of collabs and a lower sentiment score.</p>
+<p>Put in perspective, we find that the interplay between sentiment score, lexical richness, weeks on chart and the
+number of collaborations may be statistically significant.  However, we expect that the sentiment plays a small
+role in the prediction of an artists&rsquo; collaborations or number of weeks on chart. In order to investigate what
+factors influence the number of collaborations, we decided to run a number of regression models in the following
+section.</p>
+<h2 id="collaboration-prediction">Collaboration prediction</h2>
+<p>Having found earlier that the in- and out-degrees are strong predictors for weeks on chart, we analyze what factors
+determine that two artists would work together.</p>
+<p>In order to train a logistic regression model predicting the probability of an artist interaction, we prepared a
+number of features summing up differences and things shared by a pair of artists. The results of the trained models
+are satisfying, as we have achieved F1 score equal to 0.81 on the test set. The model is useful two-fold, as it
+not only allows us to run predictions, but also gives an insight into the importance of each factor. Here, we display
+the models weights:</p>
+<p><img src="/predictions_ridge_1.png" alt="alt text for screen readers">
+<img src="/prediction_ridge_weights.png" alt="alt text for screen readers">
+Among the features we see that the two most important groups are audio- and degree-based features. There are two
+main outtakes: the bigger difference between sound styles of two artists, the smaller the chance of them
+collaborating, also it helps that both artists have already been on the charts. The more, the better for the
+collaboration chances.</p>
+<h2 id="conclusions">Conclusions</h2>
+<p>What does it take to become a successful artist? Clearly, there is an aspect of art that we cannot easily grasp in
+this analysis. We cannot encapsulate a musicians&rsquo; talent with simple measures like &ldquo;danceability&rdquo; and &ldquo;energy&rdquo;. Also,
+it is controversial to assume that artists&rsquo; success can be measured with the time they spent in charts, however we
+need to find the best proxy we can think of.</p>
+<p>Our analysis shows that there are two main factors that correlate with artists success, namely the number of
+collaborations and similarity to other musicians sound. Artists seeking the kind of success we measure in this
+project could actively seek to collaborate with other musicians and increase the chance for opportunity to
+collaborate by choosing their genre to one of the most popular ones.</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://arturprzybysz.github.io/" >
+    &copy; 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div></div>
+  </div>
+</footer>
+
+  </body>
+</html>

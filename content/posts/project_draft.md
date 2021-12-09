@@ -1,7 +1,7 @@
 ---
 title: "90's music data analysis"
 date: 2021-12-08T15:04:05+01:00
-draft: False
+draft: True
 ---
 
 ## Project introduction
@@ -13,7 +13,8 @@ We will first introduce you to the dataset we have created, then we will attempt
 Finally, we get insight into the nature of collaborations between artists,
 as we find that number of partnerships strongly correlates with artists' popularity.
 
-You can watch our teaser video here: [![here](https://yt-embed.herokuapp.com/embed?v=DqjzWKfjZJc)](https://www.youtube.com/watch?v=DqjzWKfjZJc)
+You can watch our teaser video: [here!](https://www.kaggle.com/danield2255/data-on-songs-from-billboard-19992019) 
+
 ## Dataset
 
 The core part of our dataset comes from Wikipedia pages listing all the albums released from 1990-1999. 
@@ -26,7 +27,8 @@ APIs by Spotify or Genius to get insight into popularity, sound and lyric featur
 From Spotify we retrieved song features such as danceability and energy.
 From Billboard we retrieved data on which albums made it into the top charts and for how long.
 From Genius we retrieved lyrics of the songs of the artists.
-For a more detailed explanation of the dataset, please refer to our [(EXPLAINER NOTEBOOK)](https://github.com/daz261/SocialGraphs/blob/main/project/Explainer_Notebook_Final.ipynb).
+For a more detailed explanation of the dataset, please refer to explainer notebook available under 
+[(ref)](https://github.com/daz261/SocialGraphs/blob/main/Explainer_Notebook_Final.ipynb).
 
 
 Once we combined all this data, we used our dataset for data analysis, looking to find what makes an artist successful.
@@ -50,7 +52,7 @@ Each node in the network has the following attributes:
 * last_week: The last week one of the artists' albums was on the charts.
 * in_degree: The total number of in-references to the artist.
 * out_degree: The total number of out-references the artist has.
-* partition_id: The community the artist is placed in using the [(louvain algorithm)](https://arxiv.org/abs/0803.0476).
+* partition_id: The community the artist is placed in using the louvain algorithm [(ref)](https://arxiv.org/abs/0803.0476).
 
 A visualisation of the network can be seen below.`
 
@@ -58,7 +60,7 @@ A visualisation of the network can be seen below.`
 
 For visualisation clarity, we decided to only display the names of the nodes
 with at least 50 collaborations. This highlights the artists with the most collaborations.
-The positions of the nodes have been calculated using the ForceAtlas2 [(algorithm)](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0098679).
+The positions of the nodes have been calculated using the ForceAtlas2 algorithm [(ref)](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0098679).
 We can see that the artists have been positioned in such a way, that they are close
 to artists, that they collaborate with the most. This results in emerging of clusters.
 We hypothesise, that it is highly influenced by artists' genre. A very good example of this is a group
@@ -113,11 +115,11 @@ are important?
 
 ## Word Clouds
 
-As mentioned earlier, we have used the [(Louvain algorithm)](https://arxiv.org/abs/0803.0476) to partition the artists (our nodes) into
+As mentioned earlier, we have used the Louvain algorithm [(ref)](https://arxiv.org/abs/0803.0476) to partition the artists (our nodes) into
 communities. We have 16 communities. In order to understand these communities better, i.e. what they represent,
 we can look at what is important to them. For this, we will be using the lyrics from each artists' albums.
-For each community, a selected number of song lyrics of the artist's in that community are analyzed using the [(TFIDF
-score)](https://en.wikipedia.org/wiki/Tf%E2%80%93idf). We have then used this to make word clouds of the communities lyrics. A select number of these
+For each community, a selected number of song lyrics of the artist's in that community are analyzed using the TFIDF
+score [(ref)](https://en.wikipedia.org/wiki/Tf%E2%80%93idf). We have then used this to make word clouds of the communities lyrics. A select number of these
 can be seen below.
 
 ![alt text for screen readers](/cloud1.png)
@@ -129,7 +131,7 @@ can be seen below.
 To give an even better understanding, in the title of each word cloud, we have added the top 3 artists in that community
 (the artists that have the most connections). These artists are meant to represent the communities in a way.
 We see that in the word cloud where the top artists are Nas, The Notorious B.I.G. and a Tribe Called Quest, the biggest
-words are typical rap lyrics that were found a lot in [(90's rap music)](https://rateyourmusic.com/list/theu003/top_100_rap_verses_of_the_1990s/
+words are typical rap lyrics that were found a lot in 90's rap music [(ref)](https://rateyourmusic.com/list/theu003/top_100_rap_verses_of_the_1990s/
 ).
 On the other side, the word cloud with the top artist's Weird Al Yankovic, The Red Hot Chili Peppers and The Foo Fighters
 have words more in the genre of rock. The last word cloud, with the top artist's Paul McCartney, John Lennon
@@ -142,19 +144,20 @@ members of the Beatles :-)
 The purpose of the sentiment analysis part is to analyze the lyrics of different artists and albums in order
 to determine if the sentiment score for each album in the network is influenced by specific features such as 
 genre, year, trend in the number of collaborations etc. Ultimately, the analysis of this part investigates the 
-interplay between the [(LabMT sentiment score)](https://arxiv.org/abs/1512.00531) and features such as number of collaborations or weeks in chart. 
+interplay between the LabMT sentiment score [(ref)](https://arxiv.org/abs/1512.00531) and features such as number of collaborations or weeks in chart. 
 In order to do so, we broke down our analysis into 3 levels: exploratory sentiment analysis of all the artists in 
 the network, analysis of communities of artists and associated genres and analysis of the most successful artists.
 
 ![alt text for screen readers](/histogram_sentiment.png )
-
 
 For the purpose of this analysis, we found that LabMT is the most robust method to analyze our lyrics. From the 
 histogram above, we notice that the values of sentiment score for LabMT method lie between 4.9 and 5.095. 
 The histogram follows a Gaussian distribution, with most values centered around 5, but with the entire distribution 
 being slightly right-skewed. 
 
-![alt text for screen readers](/orange.png )
+![alt text for screen readers](/labmt_genre_updated.png )
+
+![alt text for screen readers](/labmt_genres_top.png)
 
 We found the analysis of the sentiment score per genre to be promising, which is why we filtered 
 our network for the top 30 most artists by sentiment score (artists represent the nodes in our network) and we 
