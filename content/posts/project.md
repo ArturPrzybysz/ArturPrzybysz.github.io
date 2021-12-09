@@ -123,6 +123,7 @@ can be seen below.
 ![alt text for screen readers](/cloud1.png)
 
 ![alt text for screen readers](/wordcloud222.png)
+
 ![alt text for screen readers](/clouddd.png)
 
 [//]: # (![alt text for screen readers]&#40;/wordclouds_3.png&#41;)
