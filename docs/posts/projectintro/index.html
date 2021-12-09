@@ -39,7 +39,7 @@ We will first introduce you to the dataset we have created, then we will attempt
 We will first introduce you to the dataset we have created, then we will attempt to predict an artists&rsquo; success directly. Finally, we get insight into the nature of collaborations between artists, as we find that number of partnerships strongly correlates with artists&rsquo; popularity.">
 <meta itemprop="datePublished" content="2021-12-08T15:04:05&#43;01:00" />
 <meta itemprop="dateModified" content="2021-12-08T15:04:05&#43;01:00" />
-<meta itemprop="wordCount" content="1556">
+<meta itemprop="wordCount" content="2293">
 
 
 
@@ -210,7 +210,6 @@ of rappers, where we can see N.A.S., Snoop Dogg and The Notorious Bigg.</p>
 </tbody>
 </table>
 <p>The in and out-degrees distributions are following:</p>
-<p><img src="/network_vis.png" alt="alt text for screen readers" title="Network visualisation"></p>
 <p><img src="/out_degree.png" alt="alt text for screen readers" title="Network visualisation"></p>
 <p>The linear and log-log in-degree distribution are shown in the figures above.
 Both these distributions follow the Power Law. We notice that there are many nodes with only a few links
@@ -251,28 +250,80 @@ On the other side, the word cloud with the top artist&rsquo;s Weird Al Yankovic,
 have words more in the genre of rock. The last word cloud, with the top artist&rsquo;s Paul McCartney, John Lennon
 and Ringo Starr has more hippy lyrics, which probably doesn&rsquo;t surprise anyone, with its top artist&rsquo;s being
 members of the Beatles :-)</p>
+<h2 id="sentiment-analysis">Sentiment analysis</h2>
 <p>The purpose of the sentiment analysis part is to analyze the lyrics of different artists and albums in order
 to determine if the sentiment score for each album in the network is influenced by specific features such as
 genre, year, trend in the number of collaborations etc. Ultimately, the analysis of this part investigates the
-interplay between the LabMT sentiment score and features such as number of collaborations or weeks in chart.
+interplay between the LabMT sentiment score [REF TODO] and features such as number of collaborations or weeks in chart.
 In order to do so, we broke down our analysis into 3 levels: exploratory sentiment analysis of all the artists in
 the network, analysis of communities of artists and associated genres and analysis of the most successful artists.</p>
-<!-- raw HTML omitted -->
+<p><img src="/labmt_1.png" alt="alt text for screen readers" title="Network visualisation">
+<!-- raw HTML omitted --></p>
 <p>For the purpose of this analysis, we found that LabMT is the most robust method to analyze our lyrics. From the
 histogram above, we notice that the values of sentiment score for LabMT method lie between 4.9 and 5.095.
 The histogram follows a Gaussian distribution, with most values centered around 5, but with the entire distribution
-being slightly skewed to the left.</p>
+being slightly right-skewed.</p>
+<p><img src="/labmt_genre_updated.png" alt="alt text for screen readers" title="Network visualisation"></p>
 <!-- raw HTML omitted -->
-<p>We found our that the analysis of the sentiment score per genre to be quite interesting, which is why we filtered
+<p>We found out that the analysis of the sentiment score per genre to be quite interesting, which is why we filtered
 our network for the top 30 most artists by sentiment score (artists represent the nodes in our network) and we
-extracted their associated genres. In the figure, we notice that some genres, such as girl group, ambient house and
-have a higher sentiment score than the others, such as hip-hop and punk. Considering that girl groups have met a
-wide success in the 90&rsquo;s, with famous bands such as Destiny&rsquo;s Child and Spicy Girls, it is no surprise that the
-genre is associated with very happy sentiments.</p>
-<h2 id="conclusion">Conclusion</h2>
-<h2 id="sentiment-analysis">Sentiment analysis</h2>
-<h3 id="lalala">Lalala</h3>
-<p>Hasta manana</p>
+extracted their associated genres. In the figure, we notice that some genres, such as ambient house and chicago indie
+have a higher sentiment score than the others, such as dance-punk and alternative dance. it is no surprise that the
+genres house and indie are associated with &ldquo;happier&rdquo; sentiments, considering that for example indie has successful
+artists such as Oasis and The cure.</p>
+<p><img src="/comm_stacked.png" alt="alt text for screen readers" title="Network visualisation">
+<!-- raw HTML omitted --></p>
+<p>Next, we examined the relationship between average sentiment per community and the number of collaborations,
+as well as the number of weeks on the Billboard chart. The plot is in ascending order of sentiment from
+left to right. The plot indicates that the most negative communities of
+genres (the leftmost ones) have a slightly higher number of collaborations compared to the most positive ones.
+However, it may be difficult to make such a statement by looking only at the communities of genres. That is why we
+will continue our analysis by trying to determine whether the number of collaborations and the number of weeks on
+chart are indeed measures of success for popular artists.
+<img src="/top30_lencollabs.png" alt="alt text for screen readers" title="Network visualisation">
+<!-- raw HTML omitted --></p>
+<p>The plot above presents a distribution of the number of weeks on the Billboard chart for the top 30 most connected
+artists and their associated genres. The colorbar at the bottom indicates the LabMT sentiment score colored from the most
+negative (purple) to the most positive (yellow) one. We notice that the artists and associated genres with the
+largest cumulative number of weeks on chart have an overall neutral to more negative sentiment, with the
+exception of &ldquo;freak folk&rdquo; which stands out as being surprisingly positive. However, the number of weeks on chart
+seems to be quite uniformly distributed for the top 30 artists, being in the range of 10 to 17.</p>
+<p>All in all, from the sentiment analysis part, we can conclude that genres such as hip hop, cal rap, southers trap,
+smooth jazz, soundtrack and trance are more prone to a larger number of collaborations and a greater number of weeks in
+chart, and they are associated with a lower to neutral sentiment compared to the others. From the analysis of the
+communities of genres, we can infer that communities where the dominant genres are britpop boy bands, alternative
+pop and alternative rock have a greater number of collaborations, but they are not necessarily associated with a
+specific sentiment. From the analysis of the top 30 artists by popularity, we can infer that genres such as
+dancehall, smooth jazz and disco jazz have a high number of collabs and lower sentiment score; genres such as
+girl(boy) bands have a lower number of collabs and a lower sentiment score.</p>
+<p>Put in perspective, we find that the interplay between sentiment score, lexical richness, weeks on chart and the
+number of collaborations may be statistically significant.  However, we expect that the sentiment plays a small
+role in the prediction of an artists&rsquo; collaborations or number of weeks on chart. In order to investigate what
+factors influence the number of collaborations, we decided to run a number of regression models in the following
+section.</p>
+<h2 id="collaboration-prediction">Collaboration prediction</h2>
+<p>Having found earlier that the in- and out-degrees are strong predictors for weeks on chart, we analyze what factors
+determine that two artists would work together.</p>
+<p>In order to train a logistic regression model predicting the probability of an artist interaction, we prepared a
+number of features summing up differences and things shared by a pair of artists. The results of the trained models
+are satisfying, as we have achieved F1 score equal to 0.81 on the test set. The model is useful two-fold, as it
+not only allows us to run predictions, but also gives an insight into the importance of each factor. Here, we display
+the models weights:</p>
+<p><img src="/predictions_ridge_1.png" alt="alt text for screen readers" title="Network visualisation">
+<img src="/predictions_ridge_weights.png" alt="alt text for screen readers" title="Network visualisation"></p>
+<p>Among the features we see that the two most important groups are audio- and degree-based features. There are two
+main outtakes: the bigger difference between sound styles of two artists, the smaller the chance of them
+collaborating, also it helps that both artists have already been on the charts. The more, the better for the
+collaboration chances.</p>
+<h2 id="conclusions">Conclusions</h2>
+<p>What does it take to become a successful artist? Clearly, there is an aspect of art that we cannot easily grasp in
+this analysis. We cannot encapsulate a musicians talent with simple measures like &ldquo;danceability&rdquo; and &ldquo;energy&rdquo;. Also,
+it is controversial to assume that artists success can be measured with the time they spent in charts, however we
+need to find the best proxy we can think of.</p>
+<p>Our analysis shows that there are two main factors that correlate with artists success, namely the number of
+collaborations and similarity to other musicians sound. Artists seeking the kind of success we measure in this
+project could actively seek to collaborate with other musicians and increase the chance for opportunity to
+collaborate by choosing their genre to one of the most popular ones.</p>
 <ul class="pa0">
   
 </ul>
