@@ -13,10 +13,10 @@
     
     <item>
       <title>90&#39;s music data analysis</title>
-      <link>https://arturprzybysz.github.io/posts/draft/</link>
+      <link>https://arturprzybysz.github.io/posts/project/</link>
       <pubDate>Wed, 08 Dec 2021 15:04:05 +0100</pubDate>
       
-      <guid>https://arturprzybysz.github.io/posts/draft/</guid>
+      <guid>https://arturprzybysz.github.io/posts/project/</guid>
       <description>Project introduction In this project we are looking for an answer to the question: &amp;ldquo;What makes artists successful?&amp;quot;. In order to find the answer we collect a wide range of data regarding artists&amp;rsquo; interactions, their artistic creations and popularity of their work.
 We will first introduce you to the dataset we have created, then we will attempt to predict an artists&amp;rsquo; success directly. Finally, we get insight into the nature of collaborations between artists, as we find that number of partnerships strongly correlates with artists&amp;rsquo; popularity.</description>
     </item>
