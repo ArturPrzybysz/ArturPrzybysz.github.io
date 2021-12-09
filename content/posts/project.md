@@ -121,6 +121,7 @@ score)](https://en.wikipedia.org/wiki/Tf%E2%80%93idf). We have then used this to
 can be seen below.
 
 ![alt text for screen readers](/cloud1.png)
+
 ![alt text for screen readers](/wordcloud222.png)
 
 [//]: # (![alt text for screen readers]&#40;/wordclouds_3.png&#41;)
