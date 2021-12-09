@@ -124,7 +124,8 @@ can be seen below.
 
 ![alt text for screen readers](/wordclouds_1.png)
 ![alt text for screen readers](/wordclouds_2.png)
-![alt text for screen readers](/wordclouds_3.png)
+
+[//]: # (![alt text for screen readers]&#40;/wordclouds_3.png&#41;)
 
 
 To give an even better understanding, in the title of each word cloud, we have added the top 3 artists in that community
@@ -157,9 +158,9 @@ being slightly right-skewed.
 
 ![alt text for screen readers](/labmt_genre_updated.png )
 
-![alt text for screen readers](labmt_genres_top.png)
+![alt text for screen readers](/labmt_genres_top.png)
 
-We found out that the analysis of the sentiment score per genre to be quite interesting, which is why we filtered 
+We found the analysis of the sentiment score per genre to be promising, which is why we filtered 
 our network for the top 30 most artists by sentiment score (artists represent the nodes in our network) and we 
 extracted their associated genres. In the figure, we notice that some genres, such as ambient house and chicago indie 
 have a higher sentiment score than the others, such as dance-punk and alternative dance. it is no surprise that the 
