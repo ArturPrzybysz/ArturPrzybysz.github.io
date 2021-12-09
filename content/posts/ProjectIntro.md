@@ -51,15 +51,15 @@ Each node in the network has the following attributes:
 * last_week: The last week one of the artists' albums was on the charts.
 * in_degree: The total number of in-references to the artist.
 * out_degree: The total number of out-references the artist has.
-* partition_id: The community the artist is placed in using the louvain algorithm [REFERENCE TODO].
+* partition_id: The community the artist is placed in using the louvain algorithm [https://arxiv.org/abs/0803.0476].
 
 A visualisation of the network can be seen below.`
 
-![alt text for screen readers](/network_vis.png "Network visualisation").
+![alt text for screen readers](/network_vis.png ).
 
 For visualisation clarity, we decided to only display the names of the nodes
 with at least 50 collaborations. This highlights the artists with the most collaborations.
-The positions of the nodes have been calculated using the ForceAtlas2 algorithm [REFERENCE TODO].
+The positions of the nodes have been calculated using the ForceAtlas2 algorithm [https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0098679].
 We can see that the artists have been positioned in such a way, that they are close
 to artists, that they collaborate with the most. This results in emerging of clusters.
 We hypothesise, that it is highly influenced by artists' genre. A very good example of this is a group
@@ -79,7 +79,7 @@ The network's statistics are following:
 
 The in and out-degrees distributions are following:
 
-![alt text for screen readers](/out_degree.png "Network visualisation")
+![alt text for screen readers](/out_degree.png )
 
 The linear and log-log in-degree distribution are shown in the figures above.
 Both these distributions follow the Power Law. We notice that there are many nodes with only a few links
@@ -91,9 +91,9 @@ We want to examine the attributes of our nodes, to see if there is any correlati
 the success of an artist. For this, we made a scatter plot of each node attributes against the weeks on chart and
 computed the pearson correlation between these. See the scatter plot below.
 
-<img alt="alt text for screen readers" height="500" src="/scatter1.png" width="500"/>
+![alt text for screen readers](/scatter1.png)
 
-<img alt="alt text for screen readers" height="500" src="/scatter2.png" width="500"/>
+![alt text for screen readers](/scatter2.png)
 
 From this, we found that there was a strong correlation between the number of weeks an artist had on the Billboard
 charts and their number of collaborations.  This is interesting, as it points to the idea that the more popular you are
@@ -121,9 +121,9 @@ For each community, a select number of song lyrics of the artist's in that commu
 score [REF TODO]. We have then used this to make word clouds of the communities lyrics. A select number of these
 can be seen below.
 
-<img alt="alt text for screen readers" height="500" src="/wordcloud1.png" width="500"/>
-<img alt="alt text for screen readers" height="500" src="/wordcloud2.png" width="500"/>
-<img alt="alt text for screen readers" height="500" src="/wordcloud3.png" width="500"/>
+![alt text for screen readers](/wordcloud1.png)
+![alt text for screen readers](/wordcloud2.png)
+![alt text for screen readers](/wordcloud3.png)
 
 
 To give an even better understanding, in the title of each word cloud, we have added the top 3 artists in that community
@@ -145,17 +145,17 @@ interplay between the LabMT sentiment score [REF TODO] and features such as numb
 In order to do so, we broke down our analysis into 3 levels: exploratory sentiment analysis of all the artists in 
 the network, analysis of communities of artists and associated genres and analysis of the most successful artists.
 
-![alt text for screen readers](/labmt_1.png "Network visualisation")
-<img alt="alt text for screen readers" height="500" src="/labmt_1.png" width="500"/>
+![alt text for screen readers](/labmt_1.png )
+![alt text for screen readers](/labmt_1.png)
 
 For the purpose of this analysis, we found that LabMT is the most robust method to analyze our lyrics. From the 
 histogram above, we notice that the values of sentiment score for LabMT method lie between 4.9 and 5.095. 
 The histogram follows a Gaussian distribution, with most values centered around 5, but with the entire distribution 
 being slightly right-skewed. 
 
-![alt text for screen readers](/labmt_genre_updated.png "Network visualisation")
+![alt text for screen readers](/labmt_genre_updated.png )
 
-<img alt="alt text for screen readers" height="500" src="labmt_genres_top.png" width="500"/>
+![alt text for screen readers](labmt_genres_top.png)
 
 We found out that the analysis of the sentiment score per genre to be quite interesting, which is why we filtered 
 our network for the top 30 most artists by sentiment score (artists represent the nodes in our network) and we 
@@ -164,8 +164,7 @@ have a higher sentiment score than the others, such as dance-punk and alternativ
 genres house and indie are associated with "happier" sentiments, considering that for example indie has successful
 artists such as Oasis and The cure.
 
-![alt text for screen readers](/comm_stacked.png "Network visualisation")
-<img alt="alt text for screen readers" height="500" src="comm_stacked.png" width="500"/>
+![alt text for screen readers](/comm_stacked.png )
     
 Next, we examined the relationship between average sentiment per community and the number of collaborations, 
 as well as the number of weeks on the Billboard chart. The plot is in ascending order of sentiment from
@@ -174,8 +173,7 @@ genres (the leftmost ones) have a slightly higher number of collaborations compa
 However, it may be difficult to make such a statement by looking only at the communities of genres. That is why we 
 will continue our analysis by trying to determine whether the number of collaborations and the number of weeks on
 chart are indeed measures of success for popular artists.
-![alt text for screen readers](/top30_lencollabs.png "Network visualisation")
-<img alt="alt text for screen readers" height="500" src="top30_lencollabs.png" width="500"/>
+![alt text for screen readers](/top30_lencollabs.png )
 
 The plot above presents a distribution of the number of weeks on the Billboard chart for the top 30 most connected 
 artists and their associated genres. The colorbar at the bottom indicates the LabMT sentiment score colored from the most 
@@ -210,8 +208,8 @@ are satisfying, as we have achieved F1 score equal to 0.81 on the test set. The 
 not only allows us to run predictions, but also gives an insight into the importance of each factor. Here, we display 
 the models weights:
 
-![alt text for screen readers](/predictions_ridge_1.png "Network visualisation")
-![alt text for screen readers](/predictions_ridge_weights.png "Network visualisation")
+![alt text for screen readers](/predictions_ridge_1.png )
+![alt text for screen readers](/predictions_ridge_weights.png )
 
 Among the features we see that the two most important groups are audio- and degree-based features. There are two 
 main outtakes: the bigger difference between sound styles of two artists, the smaller the chance of them 
@@ -221,8 +219,8 @@ collaboration chances.
 ## Conclusions
 
 What does it take to become a successful artist? Clearly, there is an aspect of art that we cannot easily grasp in 
-this analysis. We cannot encapsulate a musicians talent with simple measures like "danceability" and "energy". Also, 
-it is controversial to assume that artists success can be measured with the time they spent in charts, however we 
+this analysis. We cannot encapsulate a musicians' talent with simple measures like "danceability" and "energy". Also, 
+it is controversial to assume that artists' success can be measured with the time they spent in charts, however we 
 need to find the best proxy we can think of.
 
 Our analysis shows that there are two main factors that correlate with artists success, namely the number of 
