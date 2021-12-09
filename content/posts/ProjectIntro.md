@@ -167,7 +167,7 @@ have a higher sentiment score than the others, such as dance-punk and alternativ
 genres house and indie are associated with "happier" sentiments, considering that for example indie has successful
 artists such as Oasis and The cure.
 
-![alt text for screen readers](/comm_stacked.png )
+![alt text for screen readers](/comm_stacked.png)
     
 Next, we examined the relationship between average sentiment per community and the number of collaborations, 
 as well as the number of weeks on the Billboard chart. The plot is in ascending order of sentiment from
@@ -176,7 +176,7 @@ genres (the leftmost ones) have a slightly higher number of collaborations compa
 However, it may be difficult to make such a statement by looking only at the communities of genres. That is why we 
 will continue our analysis by trying to determine whether the number of collaborations and the number of weeks on
 chart are indeed measures of success for popular artists.
-![alt text for screen readers](/top30_lencollabs.png )
+![alt text for screen readers](/top30_lencollabs.png)
 
 The plot above presents a distribution of the number of weeks on the Billboard chart for the top 30 most connected 
 artists and their associated genres. The colorbar at the bottom indicates the LabMT sentiment score colored from the most 
@@ -211,9 +211,8 @@ are satisfying, as we have achieved F1 score equal to 0.81 on the test set. The 
 not only allows us to run predictions, but also gives an insight into the importance of each factor. Here, we display 
 the models weights:
 
-![alt text for screen readers](/predictions_ridge_1.png )
-![alt text for screen readers](/prediction_ridge_weights.png )
-
+![alt text for screen readers](/predictions_ridge_1.png)
+![alt text for screen readers](/prediction_ridge_weights.png)
 Among the features we see that the two most important groups are audio- and degree-based features. There are two 
 main outtakes: the bigger difference between sound styles of two artists, the smaller the chance of them 
 collaborating, also it helps that both artists have already been on the charts. The more, the better for the 
